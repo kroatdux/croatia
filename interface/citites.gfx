@@ -1,0 +1,71 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_terrain_ankara"
+		texturefile = "gfx/cities/terrain_ankara.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_athens"
+		texturefile = "gfx/cities/terrain_athens.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_belgrade"
+		texturefile = "gfx/cities/terrain_belgrade.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_bucharest"
+		texturefile = "gfx/cities/terrain_bucharest.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_budapest"
+		texturefile = "gfx/cities/terrain_budapest.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_fiume"
+		texturefile = "gfx/cities/terrain_fiume.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_dubrovnik"
+		texturefile = "gfx/cities/terrain_dubrovnik.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_istanbul"
+		texturefile = "gfx/cities/terrain_istanbul.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_ljubljana"
+		texturefile = "gfx/cities/terrain_ljubljana.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_prague"
+		texturefile = "gfx/cities/terrain_prague.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_rome"
+		texturefile = "gfx/cities/terrain_rome.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_sarajevo"
+		texturefile = "gfx/cities/terrain_sarajevo.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_sofia"
+		texturefile = "gfx/cities/terrain_sofia.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_split"
+		texturefile = "gfx/cities/terrain_split.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_tirana"
+		texturefile = "gfx/cities/terrain_tirana.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_vienna"
+		texturefile = "gfx/cities/terrain_vienna.png"
+	}
+	SpriteType = {
+		name = "GFX_terrain_zagreb"
+		texturefile = "gfx/cities/terrain_zagreb.png"
+	}
+}

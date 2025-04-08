@@ -1,0 +1,126 @@
+
+spriteTypes = {	
+    				
+	spriteType = {
+		name = "GFX_trait_CRO_homeguard"
+		texturefile = "gfx/interface/traits/personal/trait_CRO_homeguard.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_trait_CRO_SS"
+		texturefile = "gfx/interface/traits/personal/trait_CRO_SS.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_trait_CRO_ustashe"
+		texturefile = "gfx/interface/traits/personal/trait_CRO_ustashe.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_bookmark_country_button_border"
+		textureFile = "gfx/interface/bookmark_country_button_border.dds"
+	}
+	spriteType = {
+		name = "GFX_bookmark_country_button"
+		textureFile = "gfx/interface/bookmark_country_button.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_banovina_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_banovina_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_condominium_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_condominium.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_CRO_fascism_group"
+		texturefile = "gfx/interface/ideologies/ustase.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_CRO_communism_group"
+		texturefile = "gfx/interface/ideologies/tito.png"
+	}
+	
+	spriteType = {
+		name = "GFX_ideology_CRO_democratic_group"
+		texturefile = "gfx/interface/ideologies/hss.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CRO_neutrality_group"
+		texturefile = "gfx/interface/ideologies/CRO_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_SER_neutrality_group"
+		texturefile = "gfx/interface/ideologies/SER_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_SER_fascism_group"
+		texturefile = "gfx/interface/ideologies/gns.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_BOS_neutrality_group"
+		texturefile = "gfx/interface/ideologies/BOS_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_SLV_neutrality_group"
+		texturefile = "gfx/interface/ideologies/SLV_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_MNT_neutrality_group"
+		texturefile = "gfx/interface/ideologies/MNT_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_ITA_neutrality_group"
+		texturefile = "gfx/interface/ideologies/ITA_autocracy.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_ITA_fascism_group"
+		texturefile = "gfx/interface/ideologies/pnf.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_YUG_fascism_group"
+		texturefile = "gfx/interface/ideologies/jrz.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_YUG_neutrality_group"
+		texturefile = "gfx/interface/ideologies/yugoslavia.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_YUG_communism_group"
+		texturefile = "gfx/interface/ideologies/skj.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_CRO_centrism"
+		texturefile = "gfx/interface/ideologies/yugoslavia.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_SLV_centrism"
+		texturefile = "gfx/interface/ideologies/yugoslavia.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_bop_CRO_kvaternik_side"
+		texturefile = "gfx/interface/bop/bop_CRO_kvaternik_side.dds"
+	}
+	spriteType = {
+		name = "GFX_bop_CRO_pavelic_side"
+		texturefile = "gfx/interface/bop/bop_CRO_pavelic_side.dds"
+	}
+	spriteType = {
+		name = "GFX_bop_CRO_kvaternik_improved_side"
+		texturefile = "gfx/interface/bop/bop_CRO_kvaternik_improved_side.dds"
+	}
+	spriteType = {
+		name = "GFX_bop_CRO_pavelic_improved_side"
+		texturefile = "gfx/interface/bop/bop_CRO_pavelic_improved_side.dds"
+	}
+
+	spriteType = {
+		name = "GFX_CRO_discouragement_of_joining_army_texticon"
+		texturefile = "gfx/texticons/idea_CRO_discouragement_of_joining_army.png"
+		legacy_lazy_load = no
+	}
+}

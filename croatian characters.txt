@@ -1,0 +1,478 @@
+Ante Pavelić - {
+	Leader - { Vanilla
+		Ideology - Fascism
+		Traits - Poglavnik
+	}
+	Field Marshal - { Vanilla
+		traits = { harsh_leader politically_connected thorough_planner }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+		legacy_id = -1 
+		visible = {
+			has_country_leader = {
+				ruling_only = yes
+				character = CRO_ante_pavelic
+			}
+		}
+	}
+}
+Andrija Hebrang - {
+	Leader - { R56
+		Ideology - Communism
+		Traits - Anti Fascist
+	}
+	Political Advisor - { R56
+		Cost - 150
+		Traits - compassionate_gentleman 
+		Available - has_government = communism
+	}
+}
+Antun Mihalović - {
+	Leader - { R56
+		Ideology - Neutrality
+		Traits - lawyer
+	}
+}
+Srdan_budisavljevic - {
+	Leader - { R56
+		Ideology - Democratic - Liberal guy
+		Traits - #
+	}
+}
+vladimir_copic - {
+	Leader - { R56
+		Ideology - Communism
+		Traits - #
+	}
+}
+Vitomir Korac - {
+	Leader - { R56
+		Ideology - Communism
+		Traits - #
+	}
+	Leader - { R56
+		Ideology - Democratic
+		Traits - #
+	}
+}
+Ivan Šubašić - {
+	Leader - { R56
+		Ideology - Neutrality
+		Traits - silent_mule
+	}
+	Political Advisor - { R56
+		Cost - 150
+		Traits - democratic_reformer 
+		Available - has_government = communism
+	}
+}
+Vladko Maček - {
+	Leader - { R56
+		Ideology - Democratic
+		Traits - #
+	}
+	Political Advisor - { R56
+		Cost - 150
+		Traits - silent_workhorse 
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+Nikola Mandić - {
+	Leader - { Vanilla
+		Ideology - Fascism
+		Traits - #
+	}
+}
+Joseph Francis - {
+	Leader - { Vanilla
+		Ideology - Neutrality
+		Traits - #
+	}
+}
+Ivan Oršanić - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - fascist_demagogue 
+		Available - #
+	}
+}
+Vlado Popović - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - communist_revolutionary 
+		Available - #
+	}
+}
+Vladimir Nazor- {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - Antifascist agent
+		Available - #
+	}
+}
+august_kosutic - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - captain_of_industry 
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+mladen lorković - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - backroom_backstabber 
+		Available - has_government = fascism
+	}
+}
+bozidar_magovac - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - compassionate_gentleman 
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+ante vokić - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - armaments_organizer 
+		Available - has_government = fascism
+	}
+}
+alojzije_stepinac - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - popular_figurehead 
+		Available - OR = { has_government = fascism has_government = neutrality }
+	}
+}
+milan_budak - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - ideological_crusader 
+		Available - has_government = fascism
+	}
+}
+vjekoslav_vrancic - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - ideological_crusader 
+		Available - has_government = fascism
+	}
+}
+slavko_kvaternik - {
+	Political Advisor - { R56
+		Cost - 150
+		Traits - quartermaster_general 
+		Available - has_government = fascism
+	}
+	Army Chief - { KR
+		Cost - 50
+		Traits - army_chief_planning_1
+		Available - #
+	}
+	Field Marshal - { KR
+		traits = { harsh_leader organizer skilled_staffer }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+}
+slavko_stancer - {
+	Army Chief - { R56
+		Cost - 100
+		Traits - army_chief_offensive_2
+		Available - #
+	}
+	Theorist - { R56
+		Cost - 100
+		Traits - military_theorist 
+		Available - #
+	}
+	High Command - { R56
+		Cost - 100
+		Traits - army_regrouping_2
+		Available - #
+	}
+	Field Marshal - { R56
+		traits = { 
+			organizer war_hero
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+}
+franjo_dzal - {
+	Theorist - { R56
+		Cost - 100
+		Traits - air_warfare_theorist
+		Available - #
+	}
+}
+vladimir_laxa - {
+	General - {
+		traits = { inflexible_strategist war_hero infantry_leader trait_mountaineer }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	Army Chief - { R56
+		Cost - 100
+		Traits - army_chief_defensive_2
+		Available - #
+	}
+}
+fedor_dragojlov - {
+	Army Chief - { R56
+		Cost - 100
+		Traits - army_chief_maneuver_2
+		Available - #
+	}
+	General - { KR
+		traits = { trait_engineer artillery_specialist skilled_staffer trait_mountaineer }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 2
+	}
+}
+matija canic - {
+	General - { R56
+		traits = { 
+			cavalry_officer hill_fighter
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 1
+	}
+}
+franjo simic - {
+	General - { R56
+		traits = { 
+			#
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+}
+junuz ajanovic - {
+	General - { R56
+		traits = { 
+			fortress_buster 
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+}
+rafael_boban - {
+	General - { R56
+		traits = { 
+			hill_fighter harsh_leader
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	High Command- { R56
+		Cost - 100
+		Traits - army_regrouping_2
+		Available - #
+	}
+}
+vilko begic - {
+	High Command - { R56
+		Cost - 100
+		Traits - army_infantry_2
+		Available - #
+	}
+}
+andro vrljak - {
+	Admiral - { R56
+		traits = { blockade_runner }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 2
+		coordination_skill = 1
+	}
+}
+duro jakcin - {
+	Admiral - { R56
+		traits = { blockade_runner spotter }
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+	Theorist - { R56
+		Cost - 100
+		Traits - naval_theorist 
+		Available - #
+	}
+	Navy Chief - { R56
+		Cost - 100
+		Traits - navy_screen_2 
+		Available - #
+	}
+}
+friedrich_navratil - {
+	General - { R56
+		traits = { war_hero organizer infantry_leader }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	Air Chief - { R56
+		Cost - 100
+		Traits - air_chief_reform_2
+		Available - #
+	}
+}
+friedrich_navratil - {
+	Air Chief - { R56
+		Cost - 100
+		Traits - air_chief_ground_support_2
+		Available - #
+	}
+}
+edgar angeli - {
+	Navy Chief - { R56
+		Cost - 100
+		Traits - navy_chief_maneuver_2
+		Available - #
+	}
+	Admiral - { KR
+		traits = #
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		coordination_skill = 1
+	}
+}
+nikola_steinfl - {
+	Navy Chief - { R56
+		Cost - 100
+		Traits - navy_chief_decisive_battle_2
+		Available - #
+	}
+	Admiral - { KR
+		traits = #
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		maneuvering_skill = 1
+		coordination_skill = 1
+	}
+}
+vladimir_kren - {
+	Air Chief - { R56
+		Cost - 100
+		Traits - air_air_superiority_2
+		Available - #
+	}
+	High Command - { KR
+		Cost - 50
+		Traits - air_combat_training_1
+		Available - #
+	}
+}
+mihajlo_lukic - {
+	General - { KR
+		traits = { career_officer commando trait_mountaineer }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+}
+eduard de bona bunic- {
+	General - { KR
+		traits = { trait_reckless cavalry_leader }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 1
+	}
+}
+aleksandar_ehrmann - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - captain_of_industry
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+oton_vinski - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - resistance_banker 
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+ivan_rikard_ivanovic - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - war_industrialist 
+		Available - OR = { has_government = democratic has_government = neutrality }
+	}
+}
+andrija_artukovic - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - prince_of_terror
+		Available - has_government = fascism
+	}
+}
+stjepan_ivsic - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - education_reformer
+		Available - has_government = fascism
+	}
+}
+ivan prpic - {
+	high command - { KR
+		Cost - 50
+		Traits - KR_MHC_infantry_1 
+		Available - #
+	}
+}
+duro_dragicevic - {
+	high command - { KR
+		Cost - 100
+		Traits - KR_MHC_artillery_2 
+		Available - #
+	}
+}
+milan_miesler - {
+	Political Advisor - { KR
+		Cost - 150
+		Traits - NOR_ruthless_police_captain 
+		Available - has_government = fascism
+	}
+}

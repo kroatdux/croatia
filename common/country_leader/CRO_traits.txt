@@ -1,0 +1,88 @@
+leader_traits = { 
+	old_ban = {
+		random = no
+		neutrality_drift = 0.1
+		cavalry_attack_factor = 0.05
+	}
+	habsburg_prince = {
+		random = no
+		stability_factor = 0.1
+		political_power_factor = 0.1
+		drift_defence_factor = 0.5
+		opinion_gain_monthly_same_ideology_factor = 0.5
+	}
+	radics_successor = {
+		random = no
+		political_power_gain = 0.15
+	}
+	poglavnik = {
+		random = no
+		weekly_casualties_war_support = 0.001
+		political_power_factor = 0.1
+	}
+	drug_comrade = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.1
+	}
+	archbishop_of_zagreb = {
+		random = no
+		sprite = 13
+		conscription_factor = 0.1
+		stability_factor = 0.05
+		compliance_growth = 0.1
+	}
+	bosnian_nationalist = {
+		random = no
+		sprite = 13
+		resistance_target = -0.1
+		stability_factor = 0.1
+	}
+	metropolitan_of_zagreb_and_whole_croatia = {
+		random = no
+		sprite = 13
+		stability_factor = 0.1
+		army_morale_factor = 0.1
+		compliance_growth_on_our_occupied_states = -0.15
+	}
+	croatian_marshal = {
+		random = no
+		sprite = 13
+		political_power_gain = 0.1
+		army_defence_factor = 0.1
+		army_attack_factor = 0.1
+	}
+	yugoslav_official = {
+		random = no
+		political_power_gain = 0.1
+		compliance_growth = -0.05
+	}
+	incompetent_ban = {
+		random = no
+		political_power_factor = -0.1
+	}
+	ustashe_teacher = {
+		random = no
+		political_power_factor = 0.05
+		manpower = 0.1
+	}
+	CRO_reichsfuhrer = {
+		resistance_damage_to_garrison = -0.1
+		foreign_subversive_activites = -0.25
+		non_core_manpower = 0.02
+		stability_factor = -0.05
+		# - Cost of Garrison/SS units
+		random = no
+	}
+	ruthless = {
+		random = no
+		sprite = 13
+		stability_factor = -0.15
+	}
+
+	pavelic_lawyer = {
+		random = no
+		sprite = 13
+		political_power_gain = 0.05
+	}
+}

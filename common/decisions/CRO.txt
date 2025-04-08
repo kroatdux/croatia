@@ -1,0 +1,287 @@
+CRO_factions = {
+	
+	CRO_deal_with_hss_paramilitary = {
+
+		allowed = { always = no }
+
+		icon = ger_mefo_bills
+
+		days_mission_timeout = 90
+
+		is_good = no
+		fire_only_once = yes
+		remove_effect = {
+		}
+		available={
+			has_completed_focus = CRO_right_to_a_army
+		}
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = HSS_loyalty
+				value = 10
+			}
+		}
+
+		timeout_effect = {
+			start_civil_war = {
+				ideology = democratic
+				set_cosmetic_tag = CRO_HSS
+				size = 0.1
+				states = all
+				states_filter = {
+					has_state_flag = CRO_hss_state
+					is_capital = no
+				}
+				set_country_flag = CRO_hss_civil_war
+			}
+			subtract_from_variable = {
+				var = HSS_loyalty
+				value = 40
+			}
+			retire_character = CRO_ivan_subasic
+		}
+	}
+	CRO_debug = {
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		available = {
+
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		visible = {
+			is_debug = yes
+
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				var = monarchistname 
+				value = 10
+			}
+		}
+	}
+	CRO_debug0 = {
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		available = {
+
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		visible = {
+			is_debug = yes
+
+		}
+
+		complete_effect = {
+			subtract_from_variable = {
+				var = monarchistname 
+				value = 10
+			}
+		}
+	}
+}
+CRO_power_balance_category = {
+
+	CRO_bop_slander_the_poglavnik = {
+		priority = 120
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		visible = {
+			has_country_leader = {
+				character = CRO_ante_pavelic
+				ruling_only = yes
+			}
+		}
+
+		available = {}
+
+		cost = ITA_bop_generic_council_cost
+
+		fire_only_once = yes
+
+		complete_effect = {
+			CRO_bop_low_decrease_effect = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+	CRO_bop_question_the_army = {
+		priority = 118
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		visible = {
+			has_country_leader = {
+				character = CRO_ante_pavelic
+				ruling_only = yes
+			}
+		}
+
+		available = {}
+
+		ai_hint_pp_cost = 15
+		custom_cost_trigger = {
+			has_political_power > 14
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_pp_15_ArmXP_10
+
+		days_re_enable = 365
+
+		complete_effect = {
+			CRO_bop_very_low_decrease_effect = yes
+			hidden_effect = {
+				add_political_power = -15
+				army_experience = -10
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	CRO_bop_question_the_airforce = {
+		priority = 117
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		visible = {
+			has_country_leader = {
+				character = CRO_ante_pavelic
+				ruling_only = yes
+			}
+		}
+
+		available = {}
+
+		ai_hint_pp_cost = 15
+		custom_cost_trigger = {
+			has_political_power > 14
+			has_air_experience > 9
+		}
+		custom_cost_text = decision_cost_pp_15_AirXP_10
+
+		days_re_enable = 365
+
+		complete_effect = {
+			CRO_bop_very_low_decrease_effect = yes
+			hidden_effect = {
+				add_political_power = -15
+				air_experience = -10
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	CRO_bop_question_the_navy = {
+		priority = 116
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		visible = {
+			has_country_leader = {
+				character = CRO_ante_pavelic
+				ruling_only = yes
+			}
+		}
+
+		available = {}
+
+		ai_hint_pp_cost = 15
+		custom_cost_trigger = {
+			has_political_power > 14
+			has_navy_experience > 9
+		}
+		custom_cost_text = decision_cost_pp_15_NavXP_10
+
+		days_re_enable = 365
+
+		complete_effect = {
+			CRO_bop_very_low_decrease_effect = yes
+			hidden_effect = {
+				add_political_power = -15
+				navy_experience = -10
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+	CRO_bop_question_the_militia = {
+		priority = 118
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = CRO
+		}
+
+		visible = {
+			has_country_leader = {
+				character = CRO_ante_pavelic
+				ruling_only = yes
+			}
+		}
+
+		available = {}
+
+		ai_hint_pp_cost = 15
+		custom_cost_trigger = {
+			has_political_power > 14
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_pp_15_ArmXP_10
+
+		days_re_enable = 365
+
+		complete_effect = {
+			CRO_bop_very_low_increase_effect = yes
+			hidden_effect = {
+				add_political_power = -15
+				army_experience = -10
+			}
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+}

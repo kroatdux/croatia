@@ -1,0 +1,20 @@
+state={
+	id=1018
+	name="STATE_1018"
+	history={
+		owner = CRO
+		buildings = {
+			infrastructure = 2
+
+		}
+		add_core_of = YUG
+		add_core_of = CRO
+
+	}
+	provinces={
+		13377 
+	}
+	manpower=113804
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

@@ -1,0 +1,46 @@
+music_station = "base_music"
+music = {
+	song = "hej_sloveni"
+	chance = {
+		modifier = { 
+			factor = 2
+			tag = CRO
+		}
+	}
+}
+music = {
+	song = "jos_hrvatska_ni_propala"
+	chance = {
+		modifier = { 
+			factor = 2
+			tag = CRO
+		}
+	}
+}
+music = {
+	song = "kninska_kraljica"
+	chance = {
+		modifier = { 
+			factor = 2
+			tag = CRO
+		}
+	}
+}
+music = {
+	song = "hamze_i_gazije"
+	chance = {
+		modifier = { 
+			factor = 5
+			owns_state = 104
+		}
+	}
+}
+music = {
+	song = "bojna_cavoglave"
+	chance = {
+		modifier = { 
+			factor = 2
+			tag = CRO
+		}
+	}
+}

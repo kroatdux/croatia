@@ -1,0 +1,71 @@
+terrain_zagreb = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_dubrovnik = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_fiume = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_split = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+
+
+
+terrain_ljubljana = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_rome = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_vienna = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_belgrade = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_athens = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_istanbul = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_sofia = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_budapest = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_bucharest = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_prague = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_tirana = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_ankara = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}
+terrain_sarajevo = {
+	army_speed_factor = -0.4
+	local_org_regain = 0.2
+}

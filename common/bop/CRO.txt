@@ -1,0 +1,192 @@
+
+CRO_power_balance = {
+	initial_value = 0.25
+	left_side = CRO_kvaternik_side
+	right_side = CRO_pavelic_side
+	decision_category = CRO_power_balance_category
+	range = {
+		id = mid_range
+		min = -0.1
+		max = 0.1
+		modifier = {
+			war_support_weekly = 0.5
+		}
+	}
+	side = {
+		id = CRO_kvaternik_side	
+		icon = GFX_bop_CRO_kvaternik_side
+
+		range = {
+			id = CRO_kvaternik_side_low_control_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				political_advisor_cost_factor = -0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = CRO_kvaternik_side_medium_control_range
+			min = -0.6
+			max = -0.3
+			modifier = {
+				political_advisor_cost_factor = -0.15
+				offensive_war_stability_factor = -0.1
+				war_support_factor = -0.05
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = CRO_kvaternik_side_high_control_range
+			min = -0.9
+			max = -0.6
+			modifier = {
+				political_advisor_cost_factor = -0.2
+				offensive_war_stability_factor = -0.15
+				war_support_factor = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = CRO_kvaternik_side_total_control_range
+			min = -1
+			max = -0.9
+			modifier = {
+				political_advisor_cost_factor = -0.25
+				offensive_war_stability_factor = -0.2
+				war_support_factor = -0.15
+			}
+			on_activate = {
+				set_power_balance_gfx = {
+					id = CRO_power_balance
+					side = CRO_kvaternik_side
+					gfx = GFX_bop_CRO_kvaternik_improved_side
+				}
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {
+					id = CRO_power_balance
+					side = CRO_kvaternik_side
+					gfx = GFX_bop_CRO_kvaternik_side
+				}
+			}
+		}
+	}
+
+	### Pavelic
+	side = {
+		id = CRO_pavelic_side
+		icon = GFX_bop_CRO_pavelic_side
+
+		range = {
+			id = ITA_mussolini_low_control_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.01
+				stability_factor = 0.01
+			}
+			on_activate = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_leader = {
+								character = ITA_benito_mussolini
+							}
+						}
+					}
+					promote_character = {
+						character = ITA_benito_mussolini
+						ideology = fascism
+					}
+				}
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = ITA_mussolini_medium_control_range
+			min = 0.3
+			max = 0.6
+			modifier = {
+				political_power_factor = 0.07
+				war_support_factor = 0.02
+				stability_factor = 0.02
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = ITA_mussolini_high_control_range
+			min = 0.6
+			max = 0.9
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.03
+				stability_factor = 0.03
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = ITA_mussolini_total_control_range
+			min = 0.9
+			max = 1
+			modifier = {
+				political_power_factor = 0.15
+				war_support_factor = 0.05
+				stability_factor = 0.05
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				set_power_balance_gfx = {
+					id = CRO_power_balance
+					side = CRO_pavelic_side
+					gfx = GFX_bop_CRO_pavelic_improved_side
+				}
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {
+					id = CRO_power_balance
+					side = CRO_pavelic_side
+					gfx = GFX_bop_CRO_pavelic_side
+				}
+			}
+		}
+	}
+}
+

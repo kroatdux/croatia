@@ -1,0 +1,117 @@
+ideas = {
+
+	country = {
+		CRO_devils_division = {
+		
+			picture = cro_devils_division
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = 0.05
+			}
+			
+		}
+		CRO_air_force_legion = {
+		
+			picture = air_support_focus
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				air_attack_factor = 0.05
+			}
+			
+		}
+		CRO_anti_air_craft_legion = {
+		
+			picture = generic_artillery_regiments
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_artillery_attack_factor = 0.05
+			}
+			
+		}
+		CRO_naval_legion = {
+		
+			picture = generic_navy_bonus
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				navy_org_factor = 0.05
+			}
+			
+		}
+	}
+}

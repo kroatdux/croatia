@@ -1,0 +1,93 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_FOCUS_ICON_SET_CRO_HISTORICAL_KEY_FOCUS"
+		textureFile = "gfx/interface/focusview/filters/CRO_historical_key_focus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_CRO_royal_dictatorship"
+		texturefile = "gfx/interface/ideas/CRO/CRO_royal_dictatorship.png"
+	}
+	spriteType = {
+		name = "GFX_idea_ganz_kroatien_slawonien"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_ganz_kroatien_slawonien.png"
+	}
+	spriteType = {
+		name = "GFX_idea_elektra"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_elektra.png"
+	}
+	spriteType = {
+		name = "GFX_idea_ina"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_ina.png"
+	}
+	spriteType = {
+		name = "GFX_idea_prva_hrvatska_tvornica_rublja"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_prva_hrvatska_tvornica_rublja.png"
+	}
+	spriteType = {
+		name = "GFX_idea_taz"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_taz.png"
+	}
+	spriteType = {
+		name = "GFX_idea_tzv_gredelj"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_tzv_gredelj.png"
+	}
+	spriteType = {
+		name = "GFX_idea_brodosplit"
+		texturefile = "gfx/interface/ideas/CRO/companies/CRO_brodosplit.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_cro_yugoslav_puppet"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_yugoslav_puppet.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_devils_division"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_devils_division.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_croatian_armed_forces"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_croatian_armed_forces.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_domobranstvo"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_domobranstvo.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_navy"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_airforce"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_airforce.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cro_croatian_independence"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_croatian_independence.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_CRO_croatian_socialism"
+		texturefile = "gfx/interface/ideas/CRO/idea_cro_croatian_socialism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_YUG_croatian_opposition"
+		texturefile = "gfx/interface/ideas/YUG/idea_YUG_croatian_nationalism.png"
+	}
+	spriteType = {
+		name = "GFX_idea_YUG_slovene_nationalism"
+		texturefile = "gfx/interface/ideas/YUG/idea_YUG_slovenian_nationalism.png"
+	}
+	spriteType = {
+		name = "GFX_idea_YUG_macedonian_opposition"
+		texturefile = "gfx/interface/ideas/YUG/idea_YUG_macedonian_nationalism.png"
+	}
+	spriteType = {
+		name = "GFX_idea_YUG_axis_investment"
+		texturefile = "gfx/interface/ideas/YUG/idea_YUG_axis_investment.png"
+	}
+	spriteType = {
+		name = "GFX_idea_YUG_alies_investment"
+		texturefile = "gfx/interface/ideas/YUG/idea_YUG_alies_investment.png"
+	}
+}

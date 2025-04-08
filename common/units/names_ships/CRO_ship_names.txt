@@ -1,0 +1,155 @@
+﻿##### YUGOSLAVIA NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+CRO_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	prefix = "KB "
+	fallback_name = "Razarač %d"					
+
+	unique = {											
+		"Dubrovnik" "Split" "Beograd" "Zagreb" "Ljubljana" "Kotor" "Pula" "Triglav" "Biokovo" "Durmitor" "Ucka" "Koper" "Nada" 
+		"Golesnica" "Cer" 
+	}
+}
+
+### LIGHT CRUISER NAMES###
+CRO_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "KB "
+	fallback_name = "Laki Krstaš %d"
+
+	unique = {
+		"Dalmacija" "Sarajevo" "Brus" "Nis" "Smederovo" "Manasija" "Vrsac" "Ljubljana" "Belgrade" "Zagreb" "Novi Sad" 
+		"Budva" "Cetinje" "Dubrovnik" "Pec" "Pizren" "Pristina" "Split" "Banja Luka" 
+	}
+}
+
+### HEAVY CRUISER NAMES###
+CRO_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "KB "
+	fallback_name = "Teški Krstaš %d"
+
+	unique = {
+		"Belgrade" "Zagreb" "Novi Sad" "Budva" "Cetinje" "Dubrovnik" "Pec" "Pizren" "Pristina" "Sarajevo" "Split" "Skopje"  
+		"Nis" "Banja Luka" 
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+CRO_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "KB "
+	fallback_name = "Bojni Brod %d"		
+
+	unique = {
+		"Belgrade" "Zagreb" "Novi Sad" "Budva" "Cetinje" "Dubrovnik" "Pec" "Pizren" "Pristina" "Sarajevo" 
+		"Srbija" "Hrvatska" "Bosna" "Hercegovina" "Makedonija" "Slovenija" "Crna Gora" "Vojvodina" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+CRO_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "KB "
+	fallback_name = "Bojni Krstaš %d"		
+
+	unique = {
+		"Brus" "Nis" "Srbija" "Hrvatska" "Bosna" "Hercegovina" "Makedonija" "Slovenija" "Crna Gora" "Vojvodina" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+CRO_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "KB "
+	fallback_name = "Nosač Zrakoplova %d"	
+
+	unique = {
+		"Zmaj" "Smederovo" "Manasija" "Vrsac" "Ljubljana" "Brus" "Belgrade" "Zagreb" "Novi Sad" "Budva" 
+	}
+}
+
+### SUBMARINES ###
+CRO_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { CRO }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "KB "
+	fallback_name = "Podmornica %d"
+	
+	unique = {
+		"Hrabri" "Nebojsa" "Smeli" "Osvetnik" "Malisan" "Tara" "Sava" "Sutjeska" "Neretva" "Heroj" "Junak" "Drava" "Tisa" "Una" 
+		"Zeta" "Soca" "Kupa" "Vardar" "Slobodni" "Snazhni"
+	}
+}
+
+
+### THEME: YUGOSLAVIAN REGIONS ###
+CRO_REGIONS = {
+	name = NAME_THEME_REGIONS
+
+	for_countries = { CRO }
+
+	type = ship
+
+	prefix = "KB "
+	unique = {
+		"Hrvatska" "Bosna" "Hercegovina" "Dalmacija" "Slavonija" "Baranja" "Dunavska" "Dravska" "Drinska" "Primorska" "Savska" 
+	}
+}
+
+## THEME: YUGOSLAVIAN CITIES ###
+CRO_CITIES = {
+	name = NAME_THEME_CITIES
+
+	for_countries = { CRO }
+
+	type = ship
+
+	prefix = "KB "
+	unique = {
+		"Zagreb" "Dubrovnik" "Sarajevo" "Split" "Banja Luka" "Kotor" "Vukovar" "Bihać" "Bjelovar" "Gospić" "Mostar" "Ogulin" "Osijek" "Požega" "Karlovac" "Sibenik" "Travnik" "Tuzla" "Varaždin"   
+	}
+}
+

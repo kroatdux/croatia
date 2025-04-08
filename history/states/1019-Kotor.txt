@@ -1,0 +1,24 @@
+state={
+	id=1019
+	name="STATE_1019"
+	history = {
+		owner = YUG
+		add_core_of = YUG
+		add_core_of = MNT
+		victory_points = {
+			13378 1
+		}
+		buildings = {
+			infrastructure = 2
+			13378 = {
+				naval_base = 1
+			}
+		}
+	}
+	provinces={
+		13378 
+	}
+	manpower=12583
+	buildings_max_level_factor=1.000
+	state_category=enclave
+}

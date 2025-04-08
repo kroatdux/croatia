@@ -1,0 +1,62 @@
+﻿l_english:
+ CRO_factions:0 "Factions in the Banate"
+ CRO_factions_desc:1 "The banate, while on the outside seems stabile, is actualy fractured up into multiple factions.\n\nCurrent §YLoyalty§! of £faction_cro_hss §GHSS§!: [Root.GetHSSLoyaltyLevel] ([?HSS_loyalty|Y0])\n\nCurrent §YLoyalty§! of [Root.changemonarchistname]: [Root.GetMonarchistLoyaltyLevel] ([?monarchist_loyalty|Y0])\n\nCurrent §YLoyalty§! of £faction_cro_ustashe §gUstaše§!: [Root.GetUstasheLoyaltyLevel] ([?ustashe_loyalty|Y0])\n\nCurrent §YLoyalty§! of £faction_cro_partisan §RPartisans§!: [Root.GetPartisanLoyaltyLevel] ([?partisan_loyalty|Y0])\n\nCurrent §YLoyalty§! of  £faction_cro_chetnik §bChetniks§!: [Root.GetChetnikLoyaltyLevel] ([?chetnik_loyalty|Y0])"
+
+CRO_hss_states:0 "States where majority popularity is £faction_cro_hss §GHSS§!:"
+CRO_monarchist_states:0 "States where majority popularity is [Root.changemonarchistname]:"
+CRO_chetnik_states:0 "States where majority popularity is £faction_cro_chetnik §bChetniks§!:"
+CRO_ustashe_states:0 "States where majority popularity is £faction_cro_ustashe §gUstaše§!:"
+CRO_communist_states:0 "States where majority popularity is £faction_cro_partisan §RPartisans§!:"
+
+HSS_defunct:0 "§bDefunct§!"
+HSS_inconsequential:0 "§gInconsequential§!"
+HSS_hostile:0 "§RHostile§!"
+HSS_indifferent:0 "Indifferent"
+HSS_friendly:0 "§GFriendly§!"
+HSS_loyal:0 "§GLoyal§!"
+
+monarchist_defunct:0 "§bDefunct§!"
+monarchist_inconsequential:0 "§gInconsequential§!"
+monarchist_hostile:0 "§RHostile§!"
+monarchist_indifferent:0 "Indifferent"
+monarchist_friendly:0 "§GFriendly§!"
+monarchist_loyal:0 "§GLoyal§!"
+
+ustashe_defunct:0 "§bDefunct§!"
+ustashe_inconsequential:0 "§gInconsequential§!"
+ustashe_hostile:0 "§RHostile§!"
+ustashe_indifferent:0 "Indifferent"
+ustashe_friendly:0 "§GFriendly§!"
+ustashe_loyal:0 "§GLoyal§!"
+
+partisan_defunct:0 "§bDefunct§!"
+partisan_inconsequential:0 "§gInconsequential§!"
+partisan_hostile:0 "§RHostile§!"
+partisan_indifferent:0 "Indifferent"
+partisan_friendly:0 "§GFriendly§!"
+partisan_loyal:0 "§GLoyal§!"
+
+chetnik_defunct:0 "§bDefunct§!"
+chetnik_inconsequential:0 "§gInconsequential§!"
+chetnik_hostile:0 "§RHostile§!"
+chetnik_indifferent:0 "Indifferent"
+chetnik_friendly:0 "§GFriendly§!"
+chetnik_loyal:0 "§GLoyal§!"
+
+monarchistname_banate:0 "£faction_cro_monarchist §BMonarchists§!"
+monarchistname_habsburg:0 "£faction_cro_habsburg §YHabsburgs§!" 
+monarchistname_savoy:0 "£faction_cro_savoy §GSavoyards§!" 
+
+CRO_ivan_skerlecz_tooltip:0 "§Y[CRO_ivan_skerlecz.GetName]§! §Rwill only become ban if§! §Y[CRO_ivan_subasic.GetName]§! §Rsteps dow in the Peasent revolt§!"
+
+CRO_italian_zone_tt:0 "§Y[103.GetName]§!, §Y[804.GetName]§!, §Y[977.GetName]§! and §Y[973.GetName]§! will be put under the §YItalian Zone of influence§!"
+CRO_german_zone_tt:0 "§Y[109.GetName]§!, §Y[971.GetName]§!, §Y[104.GetName]§! and §Y[975.GetName]§! will be put under the §YGerman Zone of influence§!"
+CRO_german_zone_all_tt:0 "§Y[109.GetName]§!, §Y[103.GetName]§!, §Y[971.GetName]§!, §Y[104.GetName]§!, §Y[804.GetName]§!, §Y[977.GetName]§!, §Y[973.GetName]§! and §Y[975.GetName]§! will be put under the §YGerman Zone of influence§!"
+
+straza_na_drini:0 "Straža na Drini"
+borci_za_hrvatsku:0 "Borci za Hrvatsku"
+lisinski:0 "Lisinski"
+
+reliability:0 "Reliability: §R-10%§!"
+
+croatian_focus:0 "Croatian National Focus Tree"

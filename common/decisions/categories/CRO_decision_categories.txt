@@ -1,0 +1,74 @@
+
+CRO_factions = {
+	icon = generic_independence
+	picture = GFX_decision_cat_picture_government_in_exile
+	priority = 190
+	allowed = {
+		original_tag = CRO
+	}
+	visible = { has_completed_focus = CRO_deal_with_intergral_strugle }
+	visible_when_empty = yes
+	on_map_area = {
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = CRO_monarchist_state
+			}
+		}
+		name = CRO_monarchist_states
+		zoom = 150
+	}
+	on_map_area = {
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = CRO_hss_state
+			}
+		}
+		name = CRO_hss_states
+		zoom = 150
+	}
+	on_map_area = {
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = CRO_ustashe_state
+			}
+		}
+		name = CRO_ustashe_states
+		zoom = 150
+	}
+	on_map_area = {
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = CRO_partisan_state
+			}
+		}
+		name = CRO_communist_states
+		zoom = 150
+	}
+	on_map_area = {
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				has_state_flag = CRO_chetnik_state
+			}
+		}
+		name = CRO_chetnik_states
+		zoom = 150
+	}
+}
+CRO_power_balance_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = CRO
+	}
+	
+	priority = 90
+	
+	visible = {
+		
+	}
+}

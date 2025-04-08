@@ -1,0 +1,1872 @@
+characters={
+
+	CRO_ante_pavelic ={
+		name="Ante Pavelić"
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+			traits = {
+				CRO_poglavnik_trait 
+				ruthless
+				pavelic_lawyer 
+				anti_communist
+				fascist_militia_leader
+			}
+		}
+		field_marshal = {
+			traits = { harsh_leader politically_connected thorough_planner }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1 
+			visible = {
+				has_country_leader = {
+					ruling_only = yes
+					character = CRO_ante_pavelic
+				}
+			}
+		}
+	}
+	CRO_josip_broz_tito={
+		name=YUG_josip_broz_tito
+		portraits={
+			civilian={
+				large=GFX_portrait_YUG_josip_broz_tito
+			}
+		}
+		country_leader={
+			ideology=leninism
+			traits = { drug_comrade }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		field_marshal={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			visible = {
+				has_government = communism
+			}
+		}
+	}
+	CRO_heinrich_himmler = {
+		name=GER_heinrich_himmler
+		portraits={
+			army={
+				small="GFX_idea_heinrich_himmler"
+				large=GFX_portrait_GER_heinrich_himmler
+			}
+			civilian = {
+				large=GFX_portrait_GER_heinrich_himmler
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			traits = { CRO_reichsfuhrer }
+			id=465
+		}
+		allowed_civil_war = {
+			has_government = fascism
+		}
+	}
+	CRO_vitomir_korac = {
+		name = CRO_vitomir_korac
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CRO_vitomir_korac_civilian_large
+			}
+		}
+		country_leader = {
+			ideology = socialism
+		}
+	}
+	CRO_marko_kostrencic={
+		name="Marko Kostrenčić"
+		portraits={
+			civilian={
+				large="gfx/leaders/CRO/CRO_marko_kostrencic.png"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1.1"
+			traits = { incompetent_ban }
+			id=465
+		}
+	}
+	CRO_ruzic_viktor={
+		name="Viktor Ružić"
+		portraits={
+			civilian={
+				large="gfx/leaders/CRO/CRO_marko_kostrencic.png"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1.1"
+			traits = { yugoslav_official }
+			id=465
+		}
+	}
+	CRO_vladimir_copic = {
+		name = CRO_vladimir_copic
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CRO_vladimir_copic_civilian_large
+			}
+		}
+		country_leader = {
+			ideology = anti_revisionism
+		}
+	}
+	CRO_srdan_budisavljevic = {
+		name = CRO_srdan_budisavljevic
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CRO_srdan_budisavljevic_civilian_large
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits = { sharp_tongued_lawyer }
+		}
+	}
+	CRO_andrija_hebrang={
+		name="Andrija Hebrang"
+		country_leader={
+			ideology = leninism
+			traits = {
+				anti_fascist_agent
+			}
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_andrija_hebrang
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 
+				has_government = communism	
+			}				
+			traits  = {
+				compassionate_gentleman 
+			}
+		}			
+	}
+	CRO_ivan_subasic={
+		name="Ivan Šubašić"
+		country_leader={
+			ideology=centrism
+			traits = {
+				silent_mule
+			}
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ivan_subasic
+			allowed  = {
+				original_tag  = CRO
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+									
+			}
+			traits  = {
+				democratic_reformer 
+			}
+			do_effect  = {
+				not  = {
+					has_government  = democratic 
+				}
+			}
+			ai_will_do  = {
+				factor  = 0
+			}
+		}		
+	}
+	CRO_vladko_macek={
+		name="Vladko Maček"
+		portraits={
+			civilian={
+				large="gfx/leaders/CRO/portrait_CRO_vladko_macek.dds"
+				small="GFX_idea_CRO_vladko_macek"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits={ radics_successor }#mediator
+			expire="1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vladko_macek
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}	
+			}				
+			traits  = {
+				silent_workhorse 
+			}
+		}		
+		
+	}
+	CRO_ivan_orsanic={
+		name="Ivan Oršanić"
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ivan_orsanic
+			allowed  = {
+				original_tag  = CRO
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+									
+			}
+			traits  = {
+				fascist_demagogue 
+			}
+			#on_add = {
+			#	country_event = political.1
+			#}
+			do_effect  = {
+				not  = {
+					has_government  = fascism
+				}
+			}
+			#get better AI if change focus tree
+			ai_will_do  = {
+				factor  = 0
+			}
+		}
+	}
+	CRO_vlado_popovic={
+		name="Vlado Popović"
+		portraits={
+			army={
+				small="GFX_idea_CRO_vlado_popovic"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vlado_popovic
+			allowed  = {
+				original_tag  = CRO
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+									
+			}
+			traits  = {
+				communist_revolutionary 
+			}
+			on_add = {
+			#	country_event = political.1
+			}
+			do_effect  = {
+				not  = {
+					has_government  = communism 
+				}
+			}
+			#get better AI if change focus tree
+			ai_will_do  = {
+				factor  = 0
+			}
+		}
+	}
+		
+	CRO_august_kosutic={
+		name="August Košutić"
+		portraits={
+			civilian={
+				small=GFX_idea_CRO_august_kosutic
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_august_kosutic
+			allowed  = {
+				original_tag = CRO
+			}
+			available = {
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}				
+			traits  = {
+				democratic_firebrand
+			}
+			ai_will_do  = {
+				factor  = 1
+			}			
+		}			
+	}
+	CRO_bozidar_magovac={
+		name=CRO_bozidar_magovac
+		portraits={
+			civilian={
+				small=GFX_idea_CRO_bozidar_magovac
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_bozidar_magovac
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 				
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}				
+			traits  = {
+				compassionate_gentleman 
+			}
+			ai_will_do  = {
+				factor  = 1
+			}			
+		}			
+	}
+	CRO_ante_vokic={
+		name=CRO_ante_vokic
+		portraits={
+			civilian={
+				small=GFX_idea_CRO_ante_vokic
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ante_vokic
+			allowed  = {
+				original_tag = CRO
+			}
+			available = {
+				OR = {
+					has_government = fascism
+					AND = {
+						has_government = democratic
+						NOT = {
+							is_in_faction_with = GER  #Added this because the coup is apparently not yet implemented
+						}
+						#has_country_flag = lorkovic_vokic_coup_succeeded
+					}	
+				}
+			}			
+			traits  = {
+				armaments_organizer 
+			}
+			ai_will_do  = {
+				factor  = 1
+			}			
+		}	
+		advisor={
+			slot = army_chief
+			idea_token = CRO_ante_vokic
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal = {
+			traits = {
+				armor_officer 
+				infantry_officer
+				war_hero
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}	
+	}
+	CRO_milan_budak={
+		name=CRO_milan_budak
+		portraits={
+			civilian={
+				small=GFX_idea_CRO_milan_budak
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_milan_budak
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 
+				has_government = fascism	
+			}				
+			traits  = {
+				smooth_talking_charmer
+			}
+			ai_will_do  = {
+				factor  = 1
+			}			
+		}			
+	}	
+	CRO_vjekoslav_vrancic={
+		name=CRO_vjekoslav_vrancic
+		portraits={
+			civilian={
+				small=GFX_idea_CRO_vjekoslav_vrancic
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vjekoslav_vrancic
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 
+				has_government = fascism	
+			}				
+			traits  = {
+				ideological_crusader 
+			}
+			ai_will_do  = {
+				factor  = 1
+			}			
+		}			
+	}
+	CRO_slavko_kvaternik={
+		name=CRO_slavko_kvaternik
+		portraits={
+			civilian={
+		
+				small=GFX_idea_CRO_slavko_kvaternik
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_slavko_kvaternik
+			allowed  = {
+				original_tag = CRO
+			}
+			available = { 
+				has_government = fascism	
+			}				
+			traits  = {
+				quartermaster_general 
+			}
+			ai_will_do  = {
+				factor  = 0.8
+			}			
+		}
+		advisor={
+			cost = 100	
+			idea_token = CRO_slavko_kvaternik_theorist
+			slot = theorist
+			ledger = army
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				military_theorist
+			}
+		}
+		field_marshal = {
+			traits = {
+				infantry_officer 
+				harsh_leader
+				organizer
+				skilled_staffer
+				media_personality 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = CRO_slavko_kvaternik_army_chief
+			traits = { army_chief_planning_1 }
+			cost = 50
+		}		
+	}
+	CRO_mihajlo_lukic = {
+		name=YUG_mihajlo_lukic
+		portraits={
+			army={
+				large = GFX_portrait_CRO_mihajlo_lukic_army_large
+				small="GFX_idea_YUG_mihajlo_lukic"
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer 
+				career_officer
+				commando
+				trait_mountaineer
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+			visible = {
+				NOT = { is_subject_of = YUG }
+			}
+		}
+	}
+	CRO_eduard_bunic_de_bona = {
+		name = CRO_eduard_bunic_de_bona
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_eduard_bunic_de_bona_army_large
+				small = GFX_portrait_CRO_eduard_bunic_de_bona_army_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_eduard_bunic
+			available = {
+				has_completed_focus = CRO_raise_support_for_monarchy
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				noble_soldier
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_reckless
+				cavalry_leader
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	CRO_slavko_stancer={
+		advisor={
+			slot = army_chief
+			ledger = army
+			idea_token = CRO_slavko_stancer
+			allowed = {
+				original_tag = CRO
+			}
+			available = {
+				
+			}			
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}	
+		advisor = {
+			slot = high_command
+			idea_token = CRO_slavko_stancer_high_command
+			ledger = army
+			traits = { army_regrouping_2 }
+			cost = 100
+		}		
+		field_marshal = {
+			traits = { 
+				organizer war_hero
+		 	}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}	
+		name="Slavko Štancer"
+		portraits={
+			army ={
+				small="GFX_idea_CRO_slavko_stancer"
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Slavko_Stancer.dds"
+			}		
+		}		
+	}
+	CRO_franjo_dzal={
+		name=CRO_franjo_dzal
+		portraits={
+			army={
+				small=GFX_idea_CRO_franjo_dzal
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = CRO_franjo_dzal
+			ledger = air
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+
+	CRO_vladimir_laxa={
+		advisor={
+			slot = army_chief
+			ledger = army
+			idea_token = CRO_vladimir_laxa
+			allowed = {
+				original_tag = CRO
+			}
+			available = {
+				
+			}			
+			traits = {
+				army_chief_defensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {
+				old_guard
+				inflexible_strategist
+				war_hero
+				infantry_leader
+				trait_mountaineer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}		
+		name=CRO_vladimir_laxa
+		portraits={
+			army ={
+				small="GFX_idea_CRO_vladimir_laxa"
+			}		
+		}		
+	}
+	CRO_fedor_dragojlov={
+		advisor={
+			slot = army_chief
+			ledger = army
+			idea_token = CRO_fedor_dragojlov
+			allowed = {
+				original_tag = CRO
+			}
+			available = {
+				has_completed_focus = CRO_integrate_orthodox_croats_focus
+			}		
+			traits = {
+				army_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {
+				old_guard
+				trait_engineer
+				artillery_specialist
+				skilled_staffer
+				trait_mountaineer
+				trait_cautious 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}	
+		name=CRO_fedor_dragojlov
+		portraits={
+			army ={
+				small="GFX_idea_CRO_fedor_dragojlov"
+			}		
+		}		
+	}	
+	CRO_matija_canic={
+		name = "Matija Čanić"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Matija_Canic.dds"
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer cavalry_officer hill_fighter }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}	
+	}
+	CRO_franjo_simic={
+		name = "Franjo Šimić"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Franjo_Simic.dds"
+			}
+		}
+		corps_commander = {
+			traits = { inflexible_strategist }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+		}	
+	}
+	CRO_junuz_ajanovic={
+		name = "Junuz Ajanović"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Junuz_Ajanovic.dds"
+			}
+		}
+		corps_commander = {
+			traits = { fortress_buster }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}	
+	}
+	CRO_rafael_boban={
+		name = "Rafael Boban"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Rafael_Boban.dds"
+				small=GFX_idea_CRO_rafael_boban
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer militias_officer hill_fighter harsh_leader }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}	
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = CRO_rafael_boban
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+	CRO_vilko_begic={
+		name = CRO_vilko_begic
+		portraits={
+			army ={
+				small=GFX_idea_CRO_vilko_begic
+				large=gfx/leaders/kr_generic/Portrait_Europe_Generic_land_new_9.dds	#missing a large portrait? Okay
+			}
+		}
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = CRO_vilko_begic
+			allowed = {
+				original_tag = CRO
+			}			
+			traits = {
+				army_infantry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	CRO_andro_vrkljan={
+		name = "Andro Vrkljan"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_andro_vrkljan.dds"
+			}
+		}
+		navy_leader = {
+			traits = { blockade_runner navy_career_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_andro_vrkljan
+			ledger = navy
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				navy_fleet_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}	
+	}
+	CRO_duro_jakcin={
+		name = "Đuro Jakčin"
+		portraits={
+			army ={
+				large ="gfx/leaders/CRO/r56_portrait_CRO_Duro_Jakcin.dds"
+				small=GFX_idea_CRO_djuro_jakcin
+			}
+		}
+		navy_leader = {
+			traits = { spotter }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+
+		advisor={
+			slot = theorist
+			idea_token = CRO_duro_jakcin2
+			ledger = navy
+			allowed = {
+				original_tag = CRO
+			}
+			available = {
+			}			
+			traits = { naval_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_duro_jakcin
+			ledger = navy
+			allowed = {
+				original_tag = CRO
+			}
+			available = {
+			}			
+			traits = { navy_screen_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}					
+		advisor = {
+			slot = navy_chief
+			idea_token = CRO_duro_jakcin_navy_chief
+			traits = { navy_chief_reform_1 }
+			cost = 50
+		}		
+	}		
+	CRO_friedrich_navratil={
+		advisor={
+			slot = air_chief
+			idea_token = CRO_friedrich_navratil
+			ledger = air
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {
+				commando 
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}		
+		name=CRO_friedrich_navratil
+		portraits={
+			army ={
+				small="GFX_idea_CRO_friedrich_navratil"
+			}		
+		}	
+	}	
+	CRO_adalbert_rogulja={
+		advisor={
+			slot = air_chief
+			ledger = air
+			idea_token = CRO_adalbert_rogulja
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				air_chief_ground_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		name=CRO_adalbert_rogulja
+		portraits={
+			army ={
+				small="GFX_idea_CRO_adalbert_rogulja"
+			}		
+		}		
+	}	
+	CRO_edgar_angeli={
+		name=CRO_edgar_angeli	
+		portraits={
+			army ={
+				small="GFX_idea_generic_navy_europe_2"
+			}		
+		}
+		navy_leader = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor={
+			slot = navy_chief
+			ledger = navy
+			idea_token = CRO_edgar_angeli
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}			
+	}
+	CRO_nikola_steinfl={
+		advisor={
+			slot = navy_chief
+			ledger = navy
+			idea_token = CRO_nikola_steinfl
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				navy_chief_decisive_battle_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}	
+		name=CRO_nikola_steinfl
+		portraits={
+			army ={
+				small="GFX_idea_generic_navy_europe_3"
+			}		
+		}		
+	}		
+	CRO_vladimir_kren={
+		advisor={
+			slot = high_command
+			ledger = air
+			idea_token = CRO_vladimir_kren
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		name=CRO_vladimir_kren
+		portraits={
+			army ={
+				small="GFX_idea_CRO_vladimir_kren"
+			}		
+		}		
+	}
+	CRO_ivan_prpic = {
+		name = CRO_ivan_prpic
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_ivan_prpic_army_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CRO_ivan_prpic
+			ledger = army
+			traits = { army_infantry_1 }
+			cost = 50
+		}
+	}
+	CRO_duro_dragicevic = {
+		name = CRO_duro_dragicevic
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_duro_dragicevic_army_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CRO_duro_dragicevic
+			ledger = army
+			traits = { army_artillery_2 }
+			cost = 100
+		}
+	}
+	CRO_milan_miesler = {
+		name = CRO_milan_miesler
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_milan_miesler_army_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRO_milan_miesler
+			traits = { NOR_ruthless_police_captain }
+			allowed = {
+			}
+			available = {
+			}
+		}
+	}
+	CRO_dr_ante_pavelic={
+		name="CRO_dr_ante_pavelic"
+		portraits={
+			civilian={
+				large="gfx/leaders/CRO/CRO_Ante_Pavelic.png"
+			}
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+		}
+	}
+	CRO_ivan_skerlecz = {
+		name = "CRO_ivan_skerlecz"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CRO/CRO_Ivan_Skerlecz.png"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1.1"
+			traits = { old_ban }
+			id=465
+		}
+	}
+	CRO_otto_von_habsburg={
+		name="Otto von Habsburg"
+		portraits={
+			civilian={
+				large=GFX_Portrait_hungary_otto_von_hapsburg
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			traits = { habsburg_prince }
+			id=-1
+		}
+	}
+	CRO_sabor={
+		name = "Sabor"
+		portraits={
+			civilian={
+				large="gfx/leaders/CRO/CRO_sabor.png"
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	CRO_stjepan_sarkotic={ #Croatian
+		name="AUH_stjepan_sarkotic"
+		portraits={
+			army={
+				large="gfx/leaders/AUH/AUH_stjepan_sarkotic.png"
+				small="gfx/interface/ideas/AUH/idea_AUH_stjepan_sarkotic.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUH_stjepan_sarkotic
+			ledger  = army
+			available = {
+			}
+			visible = {
+			}
+			traits  = {
+				army_cavalry_2 
+			}
+			cost = 100
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+		corps_commander={
+			traits={ cavalry_leader old_guard }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=1
+			visible = {
+			}
+		}
+	}
+	CRO_prince_aimone={
+		name=CRO_prince_aimone
+		navy_leader = {
+			traits = { gentlemanly inshore_fighter }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+			legacy_id = 0
+			visible = { has_completed_focus = CRO_invite_the_house_of_savoy }
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			traits = { ITA_tomislav_of_croatia }
+			id=-1
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			traits = { ITA_tomislav_of_croatia }
+			id=-1
+		}
+		portraits={
+			civilian={
+				large=GFX_portrait_ITA_prince_aimone
+			}
+		}
+	}
+	CRO_julije_makanec={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_julije_makanec
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				education_reformer 
+			}
+		}
+		name=CRO_julije_makanec
+		portraits={
+			army={
+				small="GFX_idea_CRO_julije_makanec"
+			}
+		}
+	}
+	CRO_dzafer_kulenovic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_dzafer_kulenovic
+			available = {
+				OR = {
+					controls_state = 104
+					owns_state = 104
+				}
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				croatian_muslim_activist
+			}
+		}
+		name=CRO_dzafer_kulenovic
+		portraits={
+			army={
+				small="GFX_idea_CRO_dzafer_kulenovic"
+			}
+		}
+	}
+	CRO_mladen_lorkovic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_mladen_lorkovic
+			available = {
+				OR = {
+					is_in_faction_with = GER
+					has_completed_focus = CRO_sign_the_tripartite_pact
+				}
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				pro_german_diplomat
+			}
+		}
+		name=CRO_mladen_lorkovic
+		portraits={
+			army={
+				small="GFX_idea_CRO_mladen_lorkovic"
+			}
+		}
+	}
+	CRO_aleksandar_ehrmann = {
+		name = CRO_aleksandar_ehrmann
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_aleksandar_ehrmann_army_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRO_aleksandar_ehrmann
+			available = {
+			}
+			traits = { captain_of_industry }
+		}
+	}
+	CRO_ivanko_farolfi={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ivanko_farolfi
+			available = {
+				has_government = democratic
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				sharp_tongued_lawyer
+			}
+		}
+		name=CRO_ivanko_farolfi
+		portraits={
+			army={
+				small="GFX_idea_CRO_ivanko_farolfi"
+			}
+		}
+	}
+	
+	CRO_ljudevit_tomasic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ljudevit_tomasic
+			available = {
+				has_government = democratic
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				economic_organizer
+			}
+		}
+		name=CRO_ljudevit_tomasic
+		portraits={
+			army={
+				small="GFX_idea_CRO_ljudevit_tomasevic"
+			}
+		}
+	}
+	CRO_nikola_mandic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_nikola_mandic
+			available = {
+				has_completed_focus = CRO_empower_the_ustase
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				fascist_demagogue
+			}
+		}
+		name=CRO_nikola_mandic
+		portraits={
+			army={
+				small="GFX_idea_CRO_nikola_mandic"
+			}
+		}
+	}
+	CRO_miroslav_krleza={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_miroslav_krleza
+			available = {
+				has_government = communism
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				revolutionary_poet
+			}
+		}
+		name=CRO_miroslav_krleza
+		portraits={
+			army={
+				small="GFX_idea_CRO_miroslav_krleza"
+			}
+		}
+	}
+	
+	CRO_aloysius_stepinac={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_aloysius_stepinac
+			available = {
+				has_completed_focus = CRO_papal_support
+				NOT = {
+					has_government = communism
+				}
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				archbishop_of_zagreb
+			}
+		}
+		name=CRO_aloysius_stepinac
+		portraits={
+			army={
+				small="GFX_idea_CRO_aloysius_stepinac"
+			}
+		}
+	}
+	CRO_andrija_artukovic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_andrija_artukovic
+			available = {
+				has_government = fascism
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				prince_of_terror
+			}
+		}
+		name=CRO_andrija_artukovic
+		portraits={
+			army={
+				small="GFX_idea_CRO_andrija_artukovic"
+			}
+		}
+	}
+	CRO_ognjen_prica={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ognjen_prica
+			available = {
+				has_completed_focus = CRO_ally_tito
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				patriotic_socialist 
+			}
+		}
+		name=CRO_ognjen_prica
+		portraits={
+			army={
+				small="GFX_idea_CRO_ognjen_prica"
+			}
+		}
+	}
+	CRO_vladimir_nazor={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vladimir_nazor
+			available = {
+				NOT = { has_government = fascism }
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				staunch_anti_fascist
+			}
+		}
+		name=CRO_vladimir_nazor
+		portraits={
+			army={
+				small="GFX_idea_CRO_vladimir_nazor"
+			}
+		}
+	}
+	CRO_ivan_mestrovic={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ivan_mestrovic
+			available = {
+				
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				fortification_engineer 
+			}
+		}
+		name=CRO_ivan_mestrovic
+		portraits={
+			army={
+				small="GFX_idea_CRO_ivan_mestrovic"
+			}
+		}
+	}
+	CRO_vladimir_kosak={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vladimir_kosak
+			available = {
+				has_government = fascism
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				financial_expert
+			}
+		}
+		name=CRO_vladimir_kosak
+		portraits={
+			army={
+				small="GFX_idea_CRO_vladimir_kosak"
+			}
+		}
+	}
+	CRO_stijepo_peric={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_stijepo_peric
+			available = {
+				has_completed_focus = CRO_croatian_supremacy
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				mussolini_minister_of_foreign_affairs
+			}
+		}
+		name=CRO_stijepo_peric
+		portraits={
+			army={
+				small="GFX_idea_CRO_stijepo_peric"
+			}
+		}
+	}
+	CRO_dido_kvaternik={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_dido_kvaternik
+			available = {
+				has_intelligence_agency = yes
+			}
+			allowed = {
+				original_tag = CRO
+				has_dlc = "La Resistance"
+			}
+			traits = {
+				head_of_intelligence
+			}
+		}
+		name=CRO_dido_kvaternik
+		portraits={
+			army={
+				small="GFX_idea_CRO_dido_kvaternik"
+			}
+		}
+	}
+	CRO_oton_vinski = {
+		name = CRO_oton_vinski
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_oton_vinski_army_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRO_oton_vinski
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { resistance_banker }
+		}
+	}
+	CRO_ivan_rikard_ivanovic = {
+		name = CRO_ivan_rikard_ivanovic
+		portraits = {
+			army = {
+				small = GFX_portrait_CRO_ivan_rikard_ivanovic_army_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CRO_ivan_rikard_ivanovic
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { war_industrialist }
+		}
+	}
+	CRO_jure_francetic = {
+		name = CRO_jure_francetic 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_jure_francetic 
+			}
+		}
+		corps_commander = {
+			traits = {
+				organizer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	CRO_ivan_markulj = {
+		name = CRO_ivan_markulj 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_ivan_markulj 
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer war_hero 
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	CRO_ljubo_milos = {
+		name = CRO_ljubo_milos 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_ljubo_milos  
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_reckless harsh_leader
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+	CRO_vjekoslav_luburic = {
+		name = CRO_vjekoslav_luburic
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_vjekoslav_luburic
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster harsh_leader trait_reckless 
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CRO_delko_bogdanic = {
+		name = CRO_delko_bogdanic 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_delko_bogdanic 
+			}
+		}
+		corps_commander = {
+			traits = {
+				organizer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CRO_petar_brzica = {
+		name = CRO_petar_brzica 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_petar_brzica 
+			}
+		}
+		corps_commander = {
+			traits = {
+				commando trait_reckless harsh_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	CRO_ivan_pivac = {
+		name = CRO_ivan_pivac 
+		portraits = {
+			army = {
+				large = GFX_portrait_CRO_ivan_pivac 
+			}
+		}
+		corps_commander = {
+			traits = {
+				harsh_leader
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	CRO_dusan_palcic={
+		corps_commander={
+			traits={ trait_engineer CRO_homeguard }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+		}
+		name="Dušan Palčić"
+		portraits={
+			army={
+				small="gfx/interface/ideas/CRO/portrait_CRO_dusan_palcic.dds"
+				large="gfx/leaders/CRO/CRO_dusan_palcic.png"
+			}
+		}
+	}
+	CRO_salko_alikadić={
+		corps_commander={
+			traits={ infantry_officer CRO_homeguard }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+		name="Salko Alikadić"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
+			}
+		}
+	}
+	CRO_kostar_bader={
+		corps_commander={
+			traits={ infantry_officer CRO_homeguard }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+		name="Kosta Bader"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+			}
+		}
+	}
+	CRO_pero_blaskovic={
+		corps_commander={
+			traits={ infantry_officer CRO_homeguard }
+			skill=1
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+		name="Pero Blašković"
+		portraits={
+			army={
+				large="gfx/leaders/CRO/CRO_pero_blaskovic.png"
+			}
+		}
+	}
+
+	CRO_oton_cus={
+		corps_commander={
+			traits={ infantry_officer CRO_homeguard }
+			skill=1
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+		name="Oton Čus"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+			}
+		}
+	}
+	CRO_stjepan_dolezis={
+		corps_commander={
+			traits={ infantry_officer CRO_homeguard }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+		name="Stjepan Doležić"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+			}
+		}
+	}
+	CRO_germogen={
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_germogen
+			available = {
+				has_completed_focus = CRO_establish_the_orthodox_church
+				NOT = {
+					has_government = communism
+				}
+			}
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				metropolitan_of_zagreb_and_whole_croatia
+			}
+		}
+		name="Germogen Maximov"
+		portraits={
+			army={
+				small="gfx/interface/ideas/CRO/portrait_CRO_germogen.dds"
+			}
+		}
+	}
+	CRO_mirko_gregoric = {
+		name = "Mirko Gregorić"
+		portraits = {		
+			army={
+				large="gfx/leaders/CRO/CRO_mirko_gregoric.png"
+			}
+		}
+		corps_commander ={
+			traits = { trickster CRO_homeguard }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+}

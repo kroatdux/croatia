@@ -1,0 +1,17 @@
+CRO_RG_HISTORICAL = {
+	for_countries = { CRO }
+
+	type = railway_gun
+	
+	fallback_name = "%d. Bitnica Željezničkog topa"
+
+	ordered = {
+		
+		2 = {"%d. Bitnica Željezničkog topa"}
+		1 = {"%d. Bitnica Željezničkog topa"}
+		3 = {"%d. Bitnica Željezničkog topa"}
+		
+		
+		
+	}
+}

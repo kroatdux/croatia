@@ -1,0 +1,20 @@
+music = {
+	name = "hej_sloveni"
+	file = "hej_sloveni.ogg"
+}
+music = {
+	name = "jos_hrvatska_ni_propala"
+	file = "jos_hrvatska_ni_propala.ogg"
+}
+music = {
+	name = "kninska_kraljica"
+	file = "kninska_kraljica.ogg"
+}
+music = {
+	name = "bojna_cavoglave"
+	file = "bojna_cavoglave.ogg"
+}
+music = {
+	name = "hamze_i_gazije"
+	file = "hamze_i_gazije.ogg"
+}

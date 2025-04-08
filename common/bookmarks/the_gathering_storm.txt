@@ -1,0 +1,26 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "CRO"
+		default = yes
+		"CRO"={
+			history = "CRO_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				CRO_yugoslav_puppet
+			}
+			focuses = {
+				CRO_restore_austria_hungary
+				CRO_proclaim_the_independent_state_of_croatia
+				CRO_establish_banovina_of_croatia
+			}	
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

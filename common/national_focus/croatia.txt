@@ -1,0 +1,6683 @@
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = croatian_focus
+
+	alternate_icon_set = FOCUS_ICON_SET_CRO_HISTORICAL_KEY_FOCUS
+	#alternate_icon_set = FOCUS_ALTERNATE_ICONS
+	# ==> Loc key for toggle button : FOCUS_ALTERNATE_ICONS
+	# ==> GFX for icon on toggle button : GFX_FOCUS_ALTERNATE_ICONS
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 50
+			tag = CRO
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2750 }
+
+	initial_show_position = {
+	    x = 28
+		y = 0
+	}
+
+	shared_focus = HABSBURG_part_of_something_bigger
+
+	shortcut = {
+		name = CRO_the_autonomous_banate_shortcut
+		target = CRO_the_autonomous_banate
+		scroll_wheel_factor = 0.9 #Optional parameter, if left unset will use existing zoomlevel. Warning: there's no good way for this to respect client resolution.
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+	shortcut = {
+		name = CRO_yugoslavian_economy_shortcut
+		target = CRO_yugoslavian_economy
+		scroll_wheel_factor = 0.75
+	}
+
+#	focus = {
+#		id = CRO_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+
+	focus = {
+		id = CRO_the_autonomous_banate
+		icon = GFX_goal_generic_consumer_goods
+		x = 28
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = CRO_national_identity
+		icon = GFX_goal_CRO_flag
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_the_autonomous_banate }
+		mutually_exclusive = { }
+		relative_position_id = CRO_the_autonomous_banate
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			add_ideas = CRO_croatian_independence
+		}
+	}
+	focus = {
+		id = CRO_stabilize_the_government
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_national_identity }
+		mutually_exclusive = { }
+		relative_position_id = CRO_national_identity
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+	focus = {
+		id = CRO_agrarian_society
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_stabilize_the_government }
+		mutually_exclusive = { }
+		relative_position_id = CRO_stabilize_the_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = CRO_deal_with_intergral_strugle
+		icon = GFX_focus_CRO_deal_with_intergral_strugle
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_agrarian_society }
+		mutually_exclusive = { }
+		relative_position_id = CRO_agrarian_society
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			country_event = croatia.1
+			set_variable = {
+				var = HSS_loyalty
+				value = 65
+			}
+			set_variable = {
+				var = monarchist_loyalty
+				value = 70
+			}
+			set_variable = {
+				var = ustashe_loyalty
+				value = 25
+			}
+			set_variable = {
+				var = partisan_loyalty
+				value = 30
+			}
+			set_variable = {
+				var = chetnik_loyalty
+				value = 20
+			}
+		}
+	}
+	focus = {
+		id = CRO_reach_out_to_europe
+		icon = GFX_focus_GER_european_confederation
+		x = -24
+		y = 1
+		prerequisite = { focus = CRO_deal_with_intergral_strugle }
+		mutually_exclusive = { focus = CRO_stay_with_yugoslavia_for_now focus = CRO_embrace_democratic_ideas }
+		relative_position_id = CRO_deal_with_intergral_strugle
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			has_country_leader = {
+				character = CRO_ivan_skerlecz
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_government = neutrality
+					capital_scope = { is_on_continent = europe }
+				}
+				add_opinion_modifier = {
+					target = CRO
+					modifier = reach_out_to_europe
+				}
+			}
+				
+		}
+	}
+	focus = {
+		id = CRO_support_for_monarchism
+		icon = GFX_focus_generic_monarchy_2
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_reach_out_to_europe }
+		mutually_exclusive = { }
+		relative_position_id = CRO_reach_out_to_europe
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = CRO_invite_the_habsburgs
+		icon = GFX_focus_CRO_invite_the_habsburgs
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_support_for_monarchism }
+		mutually_exclusive = {}
+		relative_position_id = CRO_support_for_monarchism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = CRO_habsburg
+			promote_character = {
+				character = CRO_otto_von_habsburg
+				ideology = despotism
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = CRO_habsburg_party_long
+				name = CRO_habsburg_party
+			}
+			hidden_effect = {
+				CRO = {
+					transfer_state = 102
+					transfer_state = 853
+					transfer_state = 976
+					add_to_variable = {
+						var = monarchistname 
+						value = 20
+					}
+				}
+				YUG = {
+					end_puppet = CRO
+					country_event = croatia.3
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_the_rightful_heir
+		icon = GFX_focus_rom_royal_dictatorship
+		x = -15
+		y = 1
+		prerequisite = { focus = CRO_support_for_monarchism }
+		mutually_exclusive = {}
+		relative_position_id = CRO_support_for_monarchism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_nationality = {
+				target_country = THIS
+				character = YUG_peter_ii
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = CRO_karadorde_party_long
+				name = CRO_karadorde_party
+			}
+			hidden_effect = {
+				YUG = {
+					end_puppet = CRO
+					if = {
+						limit = { has_idea = king_peter_1 }
+						remove_ideas = king_peter_1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_coup_d_etat
+		icon = GFX_focus_generic_attack_yugoslavia
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_the_rightful_heir }
+		mutually_exclusive = {}
+		relative_position_id = CRO_the_rightful_heir
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+			declare_war_on = {
+				target = YUG
+
+			}
+		}
+	}
+	focus = {
+		id = CRO_second_royal_dictatorship
+		icon = GFX_focus_generic_monarchy_1
+		
+		prerequisite = {
+			focus = CRO_coup_d_etat
+		}
+		
+		mutually_exclusive = {
+			focus = YUG_rewrite_the_constitution
+		}
+		
+		x = -3
+		y = 1
+		relative_position_id = CRO_coup_d_etat
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_leader = { character = YUG_peter_ii ruling_only = yes }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_YUG_CROATIAN_AFFAIRS}
+
+		completion_reward = {
+			add_ideas = CRO_royal_dictatorship
+			hidden_effect = {
+				news_event = { id = croatia.69 random_hours = 24 }
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YUG_monarchist
+			}
+		}
+	}
+	focus = {
+		id = CRO_ban_political_parties
+		icon = GFX_focus_generic_strike_at_democracy2
+		
+		prerequisite = {
+			focus = CRO_second_royal_dictatorship
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = -1
+		y = 1
+		relative_position_id = CRO_second_royal_dictatorship
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = neutrality
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_completed_focus = CRO_reinvigorate_monarchism }
+				}
+				swap_ideas = {
+					remove_idea = CRO_royal_dictatorship
+					add_idea = CRO_political_parties_banned
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = YUG_god_save_the_king
+					add_idea = YUG_royal_dictatorship_2
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_core_croatian_territories
+		icon = GFX_focus_CRO_coa
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_invite_the_habsburgs }
+		mutually_exclusive = { }
+		relative_position_id = CRO_invite_the_habsburgs
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			CRO = {
+				add_state_core = 970 
+				add_state_core = 971
+				add_state_core = 974
+			}
+			hidden_effect = {
+				YUG = {
+					country_event = croatia.4
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_austrian_integration
+		icon = GFX_focus_AUS_legacy_of_the_empire
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_core_croatian_territories }
+		mutually_exclusive = { }
+		relative_position_id = CRO_core_croatian_territories
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		will_lead_to_war_with = AUS
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			AUS = {
+				country_event = croatia.7
+			}
+			create_faction = AUS_danubian_federation
+
+			custom_effect_tooltip = HABSBURG_joint_ft_unlock_tt
+			hidden_effect = {
+
+
+				set_global_flag = AH_joint_tree_activated_flag
+
+				every_country = {
+					limit = {
+						HABSBURG_is_a_habsburg_viable_nation = yes
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = CRO_attack_hungary
+		icon = GFX_focus_generic_attack_hungary
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_austrian_integration }
+		mutually_exclusive = { focus = CRO_deal_with_hungary }
+		relative_position_id = CRO_austrian_integration
+
+		will_lead_to_war_with = HUN
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			CRO = {
+				create_wargoal = {
+					type = annex_everything
+					target = HUN
+					expire = 180
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_deal_with_hungary
+		icon = GFX_focus_generic_befriend_hungary
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_austrian_integration }
+		mutually_exclusive = { focus = CRO_attack_hungary }
+		relative_position_id = CRO_austrian_integration
+
+		will_lead_to_war_with = HUN
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			HUN = {
+				country_event = croatia.10
+			}
+		}
+	}
+	focus = {
+		id = CRO_reclaim_bohemia
+		icon = GFX_focus_generic_befriend_bohemia
+		x = -5
+		y = 1
+		prerequisite = { focus = CRO_deal_with_hungary focus = CRO_attack_hungary }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_hungary
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = CZE
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			CZE = {
+				country_event = croatia.13
+			}
+		}
+	}
+	focus = {
+		id = CRO_bohemian_industry
+		icon = GFX_focus_CRO_bohemian_industry
+		
+		prerequisite = { 
+			focus = CRO_reclaim_bohemia
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_reclaim_bohemia
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			owns_state = 9
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 75 }
+				limit = { 
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}  
+	}
+	focus = {
+		id = CRO_reclaim_galicia
+		icon = GFX_focus_CRO_reclaim_galicia
+		x = -3
+		y = 1
+		prerequisite = { focus = CRO_deal_with_hungary focus = CRO_attack_hungary }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_hungary
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		will_lead_to_war_with = POL
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			POL = { country_event = croatia.16 }
+		}
+	}
+	focus = {
+		id = CRO_reclaim_transylvania
+		icon = GFX_focus_YUG_autonomous_transylvania
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_deal_with_hungary focus = CRO_attack_hungary }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_hungary
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = ROM
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ROM = { country_event = croatia.19 }
+		}
+	}
+	focus = {
+		id = CRO_reclaim_south_slavic_lands
+		icon = GFX_focus_YUG_safeguard_bosnia
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_deal_with_hungary focus = CRO_attack_hungary }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_hungary
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = YUG
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			YUG = { country_event = croatia.22 }
+		}
+	}
+	focus = {
+		id = CRO_reclaim_italian_lands
+		icon = GFX_focus_attack_italy
+		x = 3
+		y = 1
+		prerequisite = { focus = CRO_deal_with_hungary focus = CRO_attack_hungary }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_hungary
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		will_lead_to_war_with = ITA
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ITA = { country_event = croatia.25 }
+		}
+	}
+	focus = {
+		id = CRO_austrian_empire
+		icon = GFX_focus_AUS_proclaim_austrian_empire
+		x = -4
+		y = 1
+		prerequisite = { focus = CRO_reclaim_bohemia }
+		prerequisite = { focus = CRO_reclaim_galicia }
+		prerequisite = { focus = CRO_reclaim_transylvania }
+		prerequisite = { focus = CRO_reclaim_south_slavic_lands }
+		prerequisite = { focus = CRO_reclaim_italian_lands }
+		mutually_exclusive = { focus = CRO_restore_austria_hungary focus = CRO_trialism }
+		relative_position_id = CRO_reclaim_south_slavic_lands
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_subject = no
+			controls_state = 102
+			controls_state = 853
+			controls_state = 103
+			controls_state = 104
+			controls_state = 804
+			controls_state = 109
+			controls_state = 45
+			controls_state = 83
+			controls_state = 76
+			controls_state = 84
+			controls_state = 764
+			controls_state = 82
+			# Austria
+			custom_trigger_tooltip = {
+				tooltip = form_country_austria_required_states_tt
+				controls_state = 848
+				controls_state = 153
+				controls_state = 152
+				controls_state = 4
+			}
+			# Czechoslovakia
+			custom_trigger_tooltip = {
+				tooltip = form_country_czechoslovakia_required_states_tt
+				controls_state = 69
+				controls_state = 9
+				controls_state = 75
+				controls_state = 74
+				controls_state = 72
+				controls_state = 70
+				controls_state = 664
+				controls_state = 71
+				controls_state = 73
+			}
+			# Hungary
+			custom_trigger_tooltip = {
+				tooltip = form_country_hungary_required_states_tt
+				controls_state = 155
+				controls_state = 43
+				controls_state = 154
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = AUS_austrian_empire
+			102 = { add_core_of = ROOT }
+			853 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			104 = { add_core_of = ROOT }
+			804 = { add_core_of = ROOT }
+			109 = { add_core_of = ROOT }
+			45 = { add_core_of = ROOT }
+			83 = { add_core_of = ROOT }
+			76 = { add_core_of = ROOT }
+			84 = { add_core_of = ROOT }
+			39 = { add_core_of = ROOT }
+			163 = { add_core_of = ROOT }
+			736 = { add_core_of = ROOT }
+			852 = { add_core_of = ROOT }
+			850 = { add_core_of = ROOT }
+			764 = { add_core_of = ROOT }
+			82 = { add_core_of = ROOT }
+			# Czechoslovakia
+			custom_effect_tooltip = form_country_czechoslovakia_coring_states_tt
+			hidden_effect = {
+				69 = { add_core_of = ROOT }
+				9 = { add_core_of = ROOT }
+				75 = { add_core_of = ROOT }
+				74 = { add_core_of = ROOT }
+				72 = { add_core_of = ROOT }
+				70 = { add_core_of = ROOT }
+				664 = { add_core_of = ROOT }
+				71 = { add_core_of = ROOT }
+				73 = { add_core_of = ROOT }
+			}
+			# Hungary
+			custom_effect_tooltip = form_country_hungary_coring_states_tt
+			hidden_effect = {
+				155 = { add_core_of = ROOT }
+				43 = { add_core_of = ROOT }
+				154 = { add_core_of = ROOT }
+			}
+			hidden_effect = {
+				news_event = { id = wtt_news.56 hours = 6 }
+				set_global_flag = form_austria_hungary_flag
+			}
+		}
+	}
+	focus = {
+		id = CRO_restore_austria_hungary
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = -2
+		y = 1
+		prerequisite = { focus = CRO_reclaim_bohemia }
+		prerequisite = { focus = CRO_reclaim_galicia }
+		prerequisite = { focus = CRO_reclaim_transylvania }
+		prerequisite = { focus = CRO_reclaim_south_slavic_lands }
+		prerequisite = { focus = CRO_reclaim_italian_lands }
+		mutually_exclusive = { focus = CRO_austrian_empire focus = CRO_trialism }
+		relative_position_id = CRO_reclaim_south_slavic_lands
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_subject = no
+			controls_state = 102
+			controls_state = 853
+			controls_state = 103
+			controls_state = 104
+			controls_state = 804
+			controls_state = 109
+			controls_state = 45
+			controls_state = 83
+			controls_state = 76
+			controls_state = 84
+			controls_state = 764
+			controls_state = 82
+			# Austria
+			custom_trigger_tooltip = {
+				tooltip = form_country_austria_required_states_tt
+				controls_state = 848
+				controls_state = 153
+				controls_state = 152
+				controls_state = 4
+			}
+			# Czechoslovakia
+			custom_trigger_tooltip = {
+				tooltip = form_country_czechoslovakia_required_states_tt
+				controls_state = 69
+				controls_state = 9
+				controls_state = 75
+				controls_state = 74
+				controls_state = 72
+				controls_state = 70
+				controls_state = 664
+				controls_state = 71
+				controls_state = 73
+			}
+			# Hungary
+			custom_trigger_tooltip = {
+				tooltip = form_country_hungary_required_states_tt
+				controls_state = 155
+				controls_state = 43
+				controls_state = 154
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					HUN = { is_subject_of = CRO }
+				}
+				set_cosmetic_tag = AUS_cisleithania
+				HUN = { set_cosmetic_tag = HUN_transleithanian_kingdom }
+				102 = { add_core_of = ROOT }
+				853 = { add_core_of = ROOT }
+				103 = { add_core_of = ROOT }
+				104 = { add_core_of = ROOT }
+				804 = { add_core_of = ROOT }
+				109 = { add_core_of = ROOT }
+				45 = { add_core_of = HUN }
+				83 = { add_core_of = HUN }
+				76 = { add_core_of = HUN }
+				84 = { add_core_of = HUN }
+				39 = { add_core_of = ROOT }
+				163 = { add_core_of = ROOT }
+				736 = { add_core_of = ROOT }
+				852 = { add_core_of = ROOT }
+				850 = { add_core_of = ROOT }
+				764 = { add_core_of = HUN }
+				82 = { add_core_of = HUN }
+			# Czechoslovakia
+				custom_effect_tooltip = form_country_czechoslovakia_coring_states_tt
+				hidden_effect = {
+					69 = { add_core_of = ROOT }
+					9 = { add_core_of = ROOT }
+					75 = { add_core_of = ROOT }
+					74 = { add_core_of = ROOT }
+					72 = { add_core_of = ROOT }
+					70 = { add_core_of = HUN }
+					664 = { add_core_of = HUN }
+					71 = { add_core_of = HUN }	
+					73 = { add_core_of = HUN }
+				}
+			}
+			else = {
+			set_cosmetic_tag = CRO_AUH
+			102 = { add_core_of = ROOT }
+			853 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			104 = { add_core_of = ROOT }
+			804 = { add_core_of = ROOT }
+			109 = { add_core_of = ROOT }
+			45 = { add_core_of = ROOT }
+			83 = { add_core_of = ROOT }
+			76 = { add_core_of = ROOT }
+			84 = { add_core_of = ROOT }
+			39 = { add_core_of = ROOT }
+			163 = { add_core_of = ROOT }
+			736 = { add_core_of = ROOT }
+			852 = { add_core_of = ROOT }
+			850 = { add_core_of = ROOT }
+			764 = { add_core_of = ROOT }
+			82 = { add_core_of = ROOT }
+			# Czechoslovakia
+			custom_effect_tooltip = form_country_czechoslovakia_coring_states_tt
+			hidden_effect = {
+				69 = { add_core_of = ROOT }
+				9 = { add_core_of = ROOT }
+				75 = { add_core_of = ROOT }
+				74 = { add_core_of = ROOT }
+				72 = { add_core_of = ROOT }
+				70 = { add_core_of = ROOT }
+				664 = { add_core_of = ROOT }
+				71 = { add_core_of = ROOT }
+				73 = { add_core_of = ROOT }
+			}
+			# Hungary
+			custom_effect_tooltip = form_country_hungary_coring_states_tt
+			hidden_effect = {
+				155 = { add_core_of = ROOT }
+				43 = { add_core_of = ROOT }
+				154 = { add_core_of = ROOT }
+			}
+			}
+			hidden_effect = {
+				news_event = { id = wtt_news.56 hours = 6 }
+				set_global_flag = form_austria_hungary_flag
+			}
+		}
+	}
+	focus = {
+		id = CRO_trialism
+		icon = GFX_focus_HABSBURG_an_empire_not_just_in_name
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_reclaim_bohemia }
+		prerequisite = { focus = CRO_reclaim_galicia }
+		prerequisite = { focus = CRO_reclaim_transylvania }
+		prerequisite = { focus = CRO_reclaim_south_slavic_lands }
+		prerequisite = { focus = CRO_reclaim_italian_lands }
+		mutually_exclusive = { focus = CRO_austrian_empire focus = CRO_restore_austria_hungary }
+		relative_position_id = CRO_reclaim_south_slavic_lands
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_subject = no
+			controls_state = 102
+			controls_state = 853
+			controls_state = 103
+			controls_state = 104
+			controls_state = 804
+			controls_state = 109
+			controls_state = 45
+			controls_state = 83
+			controls_state = 76
+			controls_state = 84
+			controls_state = 764
+			controls_state = 82
+			# Austria
+			custom_trigger_tooltip = {
+				tooltip = form_country_austria_required_states_tt
+				controls_state = 848
+				controls_state = 153
+				controls_state = 152
+				controls_state = 4
+			}
+			# Czechoslovakia
+			custom_trigger_tooltip = {
+				tooltip = form_country_czechoslovakia_required_states_tt
+				controls_state = 69
+				controls_state = 9
+				controls_state = 75
+				controls_state = 74
+				controls_state = 72
+				controls_state = 70
+				controls_state = 664
+				controls_state = 71
+				controls_state = 73
+			}
+			# Hungary
+			custom_trigger_tooltip = {
+				tooltip = form_country_hungary_required_states_tt
+				controls_state = 155
+				controls_state = 43
+				controls_state = 154
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = CRO_trialism
+			102 = { add_core_of = ROOT }
+			853 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			104 = { add_core_of = ROOT }
+			804 = { add_core_of = ROOT }
+			109 = { add_core_of = ROOT }
+			45 = { add_core_of = ROOT }
+			83 = { add_core_of = ROOT }
+			76 = { add_core_of = ROOT }
+			84 = { add_core_of = ROOT }
+			39 = { add_core_of = ROOT }
+			163 = { add_core_of = ROOT }
+			736 = { add_core_of = ROOT }
+			852 = { add_core_of = ROOT }
+			850 = { add_core_of = ROOT }
+			764 = { add_core_of = ROOT }
+			82 = { add_core_of = ROOT }
+			# Czechoslovakia
+			custom_effect_tooltip = form_country_czechoslovakia_coring_states_tt
+			hidden_effect = {
+				69 = { add_core_of = ROOT }
+				9 = { add_core_of = ROOT }
+				75 = { add_core_of = ROOT }
+				74 = { add_core_of = ROOT }
+				72 = { add_core_of = ROOT }
+				70 = { add_core_of = ROOT }
+				664 = { add_core_of = ROOT }
+				71 = { add_core_of = ROOT }
+				73 = { add_core_of = ROOT }
+			}
+			# Hungary
+			custom_effect_tooltip = form_country_hungary_coring_states_tt
+			hidden_effect = {
+				155 = { add_core_of = ROOT }
+				43 = { add_core_of = ROOT }
+				154 = { add_core_of = ROOT }
+			}
+			hidden_effect = {
+				news_event = { id = wtt_news.56 hours = 6 }
+				set_global_flag = form_austria_hungary_flag
+			}
+		}
+	}
+	focus = {
+		id = CRO_restore_the_central_powers
+		icon = GFX_focus_ger_revive_kaiserreich
+		
+		prerequisite = { 
+			focus = CRO_austrian_empire
+			focus = CRO_restore_austria_hungary
+			focus = CRO_trialism
+		}
+		
+		mutually_exclusive = {
+			focus = CRO_bruderkrieg
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = CRO_austrian_empire
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_subject = no
+			GER = {
+				exists = yes
+				is_subject = no
+				has_government = neutrality
+			}
+			OR = {
+				AND = {
+					is_in_faction = no
+					GER = { is_faction_leader = yes }
+				}
+				AND = {
+					OR = {
+						is_faction_leader = yes
+						is_in_faction = no
+					}
+					GER = { is_in_faction = no }
+				}
+			}
+		}
+		
+		bypass = {
+			OR = {
+				is_in_faction_with = GER
+				GER = { is_subject_of = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			if = {
+				limit = {
+					GER = {
+						is_faction_leader = yes
+					}
+				}
+				GER = { country_event = generic.2 }
+			}
+			else = {
+				if = {
+					limit = {
+						is_faction_leader = yes
+					}
+					set_faction_name = central_powers_faction
+				}
+				else = {
+					create_faction = central_powers_faction
+				}
+				GER = { country_event = generic.5 }
+			}
+		}
+	}
+	
+	focus = {
+		id = CRO_ally_bulgaria
+		icon = GFX_focus_generic_befriend_bulgaria
+		
+		prerequisite = { 
+			focus = CRO_restore_the_central_powers
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_restore_the_central_powers
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_faction_leader = yes
+			BUL = {
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			OR = {
+				is_in_faction_with = BUL
+				BUL = { is_subject_of = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			BUL = { country_event = generic.5 }
+		}
+	}
+	
+	focus = {
+		id = CRO_bruderkrieg
+		icon = GFX_focus_attack_germany
+		
+		prerequisite = { 
+			focus = CRO_austrian_empire
+			focus = CRO_restore_austria_hungary
+			focus = CRO_trialism
+		}
+		
+		mutually_exclusive = {
+			focus = CRO_restore_the_central_powers
+		}
+		
+		x = 3
+		y = 1
+		relative_position_id = CRO_austrian_empire
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		will_lead_to_war_with = GER
+
+		available = {
+			is_subject = no
+			GER = {
+				exists = yes
+			}
+		}
+		
+		bypass = {
+			has_war_with = GER
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			add_state_claim = 67
+			add_state_claim = 66
+			create_wargoal = {
+				type = annex_everything
+				target = GER
+			}
+		}
+	}
+	focus = {
+		id = CRO_ally_italy
+		icon = GFX_focus_befriend_italy
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_ally_bulgaria }
+		mutually_exclusive = { }
+		relative_position_id = CRO_ally_bulgaria
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_faction_leader = yes
+			ITA = {
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+			OR = {
+				is_in_faction_with = ITA
+				ITA = { is_subject_of = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ITA = { country_event = generic.5 }
+		}
+	}
+	focus = {
+		id = CRO_ally_turkey
+		icon = GFX_focus_generic_befriend_turkey
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_ally_italy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_ally_italy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_faction_leader = yes
+			TUR = {
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+			OR = {
+				is_in_faction_with = TUR
+				TUR = { is_subject_of = ROOT }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			TUR = { country_event = generic.5 }
+		}
+	}
+	focus = {
+		id = CRO_restore_the_baltic_duchy
+		icon = GFX_focus_GER_subduing_the_baltic_states
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_ally_turkey }
+		mutually_exclusive = { }
+		relative_position_id = CRO_ally_turkey
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			EST = { country_event = croatia.48 }
+			LAT = { country_event = croatia.48 }
+		}
+	}
+	focus = {
+		id = CRO_kingdom_of_finland
+		icon = GFX_focus_FIN_the_finnish_throne
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_restore_the_baltic_duchy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_restore_the_baltic_duchy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			FIN = { country_event = croatia.63 }
+		}
+	}
+	focus = {
+		id = CRO_nordic_monarchs
+		icon = GFX_focus_generic_pan_scandinavism
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_kingdom_of_finland }
+		mutually_exclusive = { }
+		relative_position_id = CRO_kingdom_of_finland
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			NORDIC_is_nordic = yes
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = DEN		
+		will_lead_to_war_with = NOR
+		will_lead_to_war_with = SWE
+		will_lead_to_war_with = ICE
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_country = {
+				limit = {
+					NORDIC_is_nordic = yes
+					NOT = { is_subject_of = CRO }
+				}
+				 country_event = croatia.66
+			}
+		}
+	}
+	focus = {
+		id = CRO_partition_italy
+		icon = GFX_focus_CRO_partition_italy
+		x = 0
+		y = 2
+		prerequisite = { focus = CRO_bruderkrieg }
+		mutually_exclusive = { }
+		relative_position_id = CRO_bruderkrieg
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = ITA
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_state_claim = 158
+			add_state_claim = 159
+			add_state_claim = 160
+			add_state_claim = 161
+			add_state_claim = 162
+			ITA = { country_event = croatia.51 }
+		}
+	}
+	focus = {
+		id = CRO_demand_the_lowlands
+		icon = GFX_focus_hol_oranje_boven
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_partition_italy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_partition_italy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = LUX
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			HOL = { country_event = croatia.54 }
+			BEL = { country_event = croatia.54 }
+			LUX = { country_event = croatia.54 }
+		}
+	}
+	focus = {
+		id = CRO_demand_burgundy
+		icon = GFX_focus_BEL_burgundy_rising
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_demand_the_lowlands }
+		mutually_exclusive = { }
+		relative_position_id = CRO_demand_the_lowlands
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = FRA
+		will_lead_to_war_with = SWI
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			SWI = { country_event = croatia.57 }
+			FRA = { country_event = croatia.60 }
+		}
+	}
+	focus = {
+		id = CRO_form_the_HRE
+		icon = GFX_focus_CRO_form_the_HRE
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_demand_burgundy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_demand_burgundy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_subject = no
+			# Germany
+			custom_trigger_tooltip = {
+				tooltip = form_hre_germany_required_states_tt
+				controls_state = 51
+				controls_state = 42
+				controls_state = 56
+				controls_state = 57
+				controls_state = 55
+				controls_state = 50
+				controls_state = 59
+				controls_state = 58
+				controls_state = 909 #New state of SCHLESWIG
+				controls_state = 60
+				controls_state = 54
+				controls_state = 52
+				controls_state = 53
+				controls_state = 61
+				controls_state = 64
+				controls_state = 65
+				controls_state = 62
+				controls_state = 68
+				controls_state = 66
+				controls_state = 67
+				controls_state = 63
+			}
+			controls_state = 8
+			controls_state = 28
+			controls_state = 735
+			controls_state = 69
+			controls_state = 9
+			controls_state = 75
+			controls_state = 74
+			controls_state = 158
+			controls_state = 159
+			controls_state = 39
+			controls_state = 850
+			controls_state = 160
+			controls_state = 161
+			controls_state = 162
+			controls_state = 736
+			controls_state = 852
+			# Switzerland
+			custom_trigger_tooltip = {
+				tooltip = form_country_switzerland_required_states_tt
+				controls_state = 3 #Swiss Plateau
+				controls_state = 151 #Eastern Swiss Alps
+				controls_state = 845 #Jura Mountains
+				controls_state = 847 #Western Swiss Alps
+				controls_state = 846 #Ticino
+			}
+			# Austria
+			custom_trigger_tooltip = {
+				tooltip = form_country_austria_required_states_tt
+				controls_state = 848
+				controls_state = 153
+				controls_state = 152
+				controls_state = 4
+				controls_state = 848 #Vorarlberg
+			}
+			# Netherlands
+			custom_trigger_tooltip = {
+				tooltip = form_eu_netherlands_required_states_tt
+				controls_state = 7
+				controls_state = 35
+				controls_state = 36
+			}
+			# Belgium
+			custom_trigger_tooltip = {
+				tooltip = form_eu_belgium_required_states_tt
+				controls_state = 6
+				controls_state = 34
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = HRE_UNIFIED
+			add_ideas = GER_holy_roman_empire_of_the_german_nation_idea 
+			8 = { add_core_of = ROOT }
+			28 = { add_core_of = ROOT }
+			735 = { add_core_of = ROOT }
+			69 = { add_core_of = ROOT }
+			9 = { add_core_of = ROOT }
+			75 = { add_core_of = ROOT }
+			74 = { add_core_of = ROOT }
+			158 = { add_core_of = ROOT }
+			159 = { add_core_of = ROOT }
+			39 = { add_core_of = ROOT }
+			160 = { add_core_of = ROOT }
+			161 = { add_core_of = ROOT }
+			162 = { add_core_of = ROOT }
+			736 = { add_core_of = ROOT }
+			850 = { add_core_of = ROOT }
+			852 = { add_core_of = ROOT }
+			# Switzerland
+			custom_effect_tooltip = form_country_switzerland_coring_states_tt
+			hidden_effect = {
+				3 = { add_core_of = ROOT }
+				151 = { add_core_of = ROOT }
+				845 = { add_core_of = ROOT }
+				847 = { add_core_of = ROOT }
+				846 = { add_core_of = ROOT }
+			}
+			# Netherlands
+			custom_effect_tooltip = form_eu_netherlands_coring_states_tt
+			hidden_effect = {
+				7 = { add_core_of = ROOT }
+				35 = { add_core_of = ROOT }
+				36 = { add_core_of = ROOT }
+			}
+			# Belgium
+			custom_effect_tooltip = form_eu_belgium_coring_states_tt
+			hidden_effect = {
+				6 = { add_core_of = ROOT }
+				34 = { add_core_of = ROOT }
+			}
+			hidden_effect = {
+				news_event = { id = wtt_news.70 hours = 6 }
+				set_global_flag = form_hre_flag
+			}
+		}
+	}
+	focus = {
+		id = CRO_reclaim_the_holy_lands
+		icon = GFX_focus_IRQ_demand_palestine
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_form_the_HRE }
+		mutually_exclusive = { }
+		relative_position_id = CRO_form_the_HRE
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		will_lead_to_war_with = ENG
+		will_lead_to_war_with = PAL
+		will_lead_to_war_with = ISR
+
+		available = {
+			OR = {
+				AND = {
+					owns_state = 454
+					has_full_control_of_state = 454
+				}
+				454 = {
+					is_fully_controlled_by = owner
+					owner = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { owns_state = 454 }
+					454 = {
+						is_fully_controlled_by = owner
+						owner = {
+							NOT = {
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+				454 = {
+					owner = {
+						country_event = { id = BBA_italy_interaction_events.666 hours = 6 random_hours = 2 }
+					}
+				}
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					transfer_state = 454 #PALESTINE
+					add_war_support = 0.03
+					454 = {
+						set_state_category = town
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 4206
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 1086
+							instant_build = yes
+						}
+						if = {
+							limit = {
+								anti_air_building < 5
+							}
+							add_building_construction = {
+								type = anti_air_building
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					owns_state = 454
+					has_full_control_of_state = 454
+				}
+				add_war_support = 0.03
+				454 = {
+					set_state_category = town
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 4206
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 1086
+						instant_build = yes
+					}
+					if = {
+						limit = {
+							anti_air_building < 5
+						}
+						add_building_construction = {
+							type = anti_air_building
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_revenge_for_sarajevo
+		icon = GFX_focus_CRO_revenge_for_sarajevo
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_demand_burgundy focus = CRO_restore_the_baltic_duchy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_demand_burgundy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			country_exists = YUG
+		}
+
+		will_lead_to_war_with = YUG
+		will_lead_to_war_with = SER
+
+		bypass = {
+			NOT = { country_exists = YUG }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = YUG
+				expire = 180
+			}
+		}
+		if = {
+			limit = {
+				country_exists = SER
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SER
+				expire = 180
+			}
+		}
+	}
+	focus = {
+		id = CRO_return_of_the_tsar
+		icon = GFX_SOV_bringing_breakaways_back_to_the_fold_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_revenge_for_sarajevo }
+		mutually_exclusive = { }
+		relative_position_id = CRO_revenge_for_sarajevo
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			country_exists = SOV
+		}
+
+		will_lead_to_war_with = SOV
+
+		bypass = {
+			NOT = { country_exists = SOV }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SOV
+				expire = 180
+			}
+		}
+	}
+	focus = {
+		id = CRO_habsburg_poland
+		icon = GFX_focus_POL_habsburg
+		
+		prerequisite = { 
+			focus = CRO_bohemian_industry
+		}
+		prerequisite = { 
+			focus = CRO_restore_the_central_powers
+			focus = CRO_bruderkrieg
+		}
+		
+		mutually_exclusive = {
+			focus = CRO_yet_another_partition_of_poland
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = CRO_bohemian_industry
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		will_lead_to_war_with = POL
+
+		available = {
+			is_subject = no
+			POL = {
+				exists = yes
+				is_subject = no
+				NOT = { has_government = communism }
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			POL = {
+				is_ally_with = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			if = {
+				limit = {
+					POL = { has_country_leader = { character = POL_karl_albrecht ruling_only = yes } }
+				}
+				POL = { country_event = croatia.39 }
+			}
+			else = {
+				POL = { country_event =  croatia.40 }
+				effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					POL = {
+						set_cosmetic_tag = POL_KINGDOM
+						promote_character = POL_karl_albrecht
+						set_party_name = { 
+							ideology = neutrality 
+							long_name = POL_habsburg_party
+							name = POL_habsburg_party 
+						}
+						unlock_national_focus = POL_habsburg
+					}
+					puppet = POL
+				}
+			}
+		}  
+	}
+	
+	focus = {
+		id = CRO_yet_another_partition_of_poland
+		icon = GFX_focus_POL_common_organization_of_society
+		
+		prerequisite = { 
+			focus = CRO_bohemian_industry
+		}
+		prerequisite = { 
+			focus = CRO_restore_the_central_powers
+			focus = CRO_bruderkrieg
+		}
+		will_lead_to_war_with = POL
+		mutually_exclusive = {
+			focus = CRO_habsburg_poland
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = CRO_bohemian_industry
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_subject = no
+			POL = {
+				exists = yes
+				has_capitulated = no
+				NOT = {
+					is_subject_of = SOV
+					is_subject_of = GER
+					has_war_with = SOV
+					has_war_with = GER
+					is_in_faction_with = SOV
+					is_in_faction_with = GER
+				}
+				OR = {
+					owns_state = 86
+					owns_state = 807
+					owns_state = 85
+					owns_state = 762
+				}
+				any_owned_state = {
+					OR = {
+						is_core_of = BLR
+						is_core_of = UKR
+					}
+				}
+			}
+			SOV = {
+				is_subject = no
+				any_owned_state = {
+					OR = {
+						is_core_of = BLR
+						is_core_of = UKR
+					}
+				}
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			GER = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		bypass = {
+			POL = {
+				has_war_with = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = { 
+			GER = { country_event = croatia.32 }
+			SOV = { country_event = croatia.32 }
+			if = {
+				limit = {
+					LIT = {
+						owns_state = 11
+					}
+					POL = {
+						owns_state = 784
+					}
+				}
+				LIT = { country_event = croatia.32 }
+			}
+			hidden_effect = { 
+				country_event = {
+					id = croatia.35 days = 5
+				}
+			}
+		}  
+	}
+	focus = {
+		id = CRO_restore_the_kingdom_of_lithuania
+		icon = GFX_focus_LIT_restore_the_grand_duchy
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = CRO_habsburg_poland
+			focus = CRO_yet_another_partition_of_poland
+		}
+		mutually_exclusive = { }
+		relative_position_id = CRO_habsburg_poland
+
+		cost = 8
+
+		will_lead_to_war_with = LIT
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			LIT = { country_event = croatia.45 }
+		}
+	}
+	focus = {
+		id = CRO_stay_with_yugoslavia_for_now
+		icon = GFX_focus_CRO_stay_with_yugoslavia
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_deal_with_intergral_strugle }
+		mutually_exclusive = { focus = CRO_reach_out_to_europe focus = CRO_embrace_democratic_ideas }
+		relative_position_id = CRO_deal_with_intergral_strugle
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+				OR = {
+					has_country_leader = { character = CRO_ruzic_viktor ruling_only = yes }
+					has_country_leader = { character = CRO_marko_kostrencic ruling_only = yes }
+				}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_to_variable = {
+				var = HSS_loyalty
+				value = -5
+			}
+			add_to_variable = {
+				var = monarchist_loyalty
+				value = -5
+			}
+			add_to_variable = {
+				var = ustashe_loyalty
+				value = -5
+			}
+		}
+	}
+	focus = {
+		id = CRO_apologise_to_france
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_stay_with_yugoslavia_for_now }
+		mutually_exclusive = { }
+		relative_position_id = CRO_stay_with_yugoslavia_for_now
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			army_experience = 25
+			add_opinion_modifier = {
+				target = FRA
+				modifier = apologised_to_france_opinion
+			}
+			FRA = {
+				army_experience = 25
+				add_opinion_modifier = {
+					target = CRO
+					modifier = apologised_to_france_opinion
+				}
+				country_event = croatia.28
+			}
+		}
+	}
+	focus = {
+		id = CRO_german_cooperation
+		icon = GFX_focus_chi_mission_to_germany
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_apologise_to_france }
+		mutually_exclusive = { }
+		relative_position_id = CRO_apologise_to_france
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GER
+				modifier = CRO_cooperation
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_cooperation
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_italian_cooperation
+		icon = GFX_focus_befriend_italy
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_apologise_to_france }
+		mutually_exclusive = { }
+		relative_position_id = CRO_apologise_to_france
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ITA
+				modifier = CRO_cooperation
+			}
+			ITA = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_cooperation
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_establish_banovina_of_croatia
+		icon = GFX_focus_YUG_banovina_of_croatia
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_german_cooperation }
+		prerequisite = { focus = CRO_italian_cooperation }
+		mutually_exclusive = { }
+		relative_position_id = CRO_german_cooperation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			YUG = {
+				has_completed_focus = YUG_establish_the_banovina_of_croatia
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			add_ideas = CRO_cvetkovic_macek_agreement
+			promote_character = CRO_ivan_subasic
+			set_cosmetic_tag = CRO_neutrality
+			transfer_state = 103
+			transfer_state = 978
+			transfer_state = 979
+			transfer_state = 804
+		}
+	}
+	focus = {
+		id = CRO_prepare_for_invasion_of_yugoslavia
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_establish_banovina_of_croatia }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_banovina_of_croatia
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			give_military_access = GER
+			give_military_access = ITA
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				producer = GER
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				producer = ITA
+				amount = 1500
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				producer = GER
+				amount = 1500
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				producer = ITA
+				amount = 1000
+			}
+		}
+	}
+	focus = {
+		id = CRO_question_of_leadership
+		icon = GFX_focus_CRO_question_of_leadership
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_prepare_for_invasion_of_yugoslavia }
+		mutually_exclusive = { }
+		relative_position_id = CRO_prepare_for_invasion_of_yugoslavia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			country_event = { id = croatia.30 }
+		}
+	}
+	focus = {
+		id = CRO_proclaim_the_independent_state_of_croatia
+		icon = GFX_focus_CRO_proclaim_the_independent_state_of_croatia
+		alternate_icon = GFX_focus_CRO_proclaim_the_independent_state_of_croatia_alt
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_question_of_leadership }
+		mutually_exclusive = { }
+		relative_position_id = CRO_question_of_leadership
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			has_global_flag = april_war
+		}
+
+		bypass = {
+			has_global_flag = croatia_established
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			set_cosmetic_tag = CRO_fascism
+			set_global_flag = croatia_established
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			GER = {
+				set_autonomy = {
+					target = CRO
+					autonomous_state = autonomy_reichsprotectorate
+				}
+			}
+			transfer_state = 104
+			transfer_state = 804
+			transfer_state = 977
+			transfer_state = 971
+			if = {
+				limit = {
+					YUG = { 
+						has_war_with = ITA
+					}
+				}
+				custom_effect_tooltip = CRO_german_zone_tt
+				custom_effect_tooltip = CRO_italian_zone_tt
+			}
+			else = {
+				custom_effect_tooltip = CRO_german_zone_all_tt
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						YUG = { 
+							has_war_with = ITA
+						}
+					}
+					103 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone
+						}
+					}
+					804 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone
+						}
+					}
+					977 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone
+						}
+					}
+					973 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone
+						}
+					}
+					978 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone 
+						}
+					}
+					979 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone 
+						}
+					}
+					980 = {
+						add_dynamic_modifier = {
+							modifier = CRO_italian_zone 
+						}
+					}
+				}
+				else = {
+					103 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone
+						}
+					}
+					804 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone
+						}
+					}
+					977 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone
+						}
+					}
+					973 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone
+						}
+					}
+					978 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone 
+						}
+					}
+					979 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone 
+						}
+					}
+					980 = {
+						add_dynamic_modifier = {
+							modifier = CRO_german_zone 
+						}
+					}
+				}
+				109 = {
+					add_dynamic_modifier = {
+						modifier = CRO_german_zone 
+					}
+				}
+				971 = {
+					add_dynamic_modifier = {
+						modifier = CRO_german_zone 
+					}
+				}
+				104 = {
+					add_dynamic_modifier = {
+						modifier = CRO_german_zone 
+					}
+				}
+				975 = {
+					add_dynamic_modifier = {
+						modifier = CRO_german_zone 
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_deal_with_italian_claims
+		icon = GFX_focus_ITA_imperial_recognition
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_proclaim_the_independent_state_of_croatia }
+		mutually_exclusive = { }
+		relative_position_id = CRO_proclaim_the_independent_state_of_croatia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ITA = {
+				transfer_state = 978
+				transfer_state = 980
+			}
+			add_ideas = CRO_tomislav_ii_idea
+			add_ideas = CRO_naval_restrictions
+		}
+	}
+	focus = {
+		id = CRO_papal_support
+		icon = GFX_focus_generic_pope
+		x = -8
+		y = 1
+		prerequisite = { focus = CRO_sign_the_tripartite_pact focus = CRO_tomislavs_absolute_reign }
+		mutually_exclusive = { }
+		relative_position_id = CRO_sign_the_tripartite_pact
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_establish_the_orthodox_church 
+		icon = GFX_focus_GRE_an_orthodox_state
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_papal_support }
+		mutually_exclusive = { }
+		relative_position_id = CRO_papal_support
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_sign_the_tripartite_pact
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_deal_with_italian_claims }
+		mutually_exclusive = { focus = CRO_tomislavs_absolute_reign }
+		relative_position_id = CRO_deal_with_italian_claims
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			GER = {
+				is_faction_leader = yes
+				has_government = fascism
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.1
+			add_opinion_modifier = {
+				target = GER
+				modifier = CRO_cooperation
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_cooperation
+				}
+			}
+			custom_effect_tooltip = available_military_high_command
+			show_unit_leaders_tooltip = CRO_ivan_prpic
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CRO_mladen_lorkovic
+		}
+	}
+	focus = {
+		id = CRO_croatians_are_germanic
+		icon = GFX_focus_generic_fascist_propaganda
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_sign_the_tripartite_pact }
+		mutually_exclusive = { }
+		relative_position_id = CRO_sign_the_tripartite_pact
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			air_experience = 50
+			add_ideas = CRO_german_propaganda
+		}
+	}
+	focus = {
+		id = CRO_joint_friendship_proclamation
+		icon = GFX_focus_CRO_joint_friendship_proclamation
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_croatians_are_germanic }
+		mutually_exclusive = { }
+		relative_position_id = CRO_croatians_are_germanic
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			OR = {
+				country_exists = SLO
+				country_exists = ROM
+			}
+		}
+
+		bypass = {
+			NOT = {
+				country_exists = SLO
+				country_exists = ROM
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = SLO
+				}
+				SLO = {
+					add_opinion_modifier = {
+						target = CRO
+						modifier = CRO_little_entente_good 
+					}
+					add_opinion_modifier = {
+						target = HUN
+						modifier = CRO_little_entente_bad
+					}
+					give_guarantee = CRO
+				}
+				add_opinion_modifier = {
+					target = SLO
+					modifier = CRO_little_entente_good 
+				}
+				give_guarantee = SLO
+			}
+			if = {
+				limit = {
+					country_exists = ROM
+				}
+				ROM = {
+					add_opinion_modifier = {
+						target = CRO
+						modifier = CRO_little_entente_good 
+					}
+					add_opinion_modifier = {
+						target = HUN
+						modifier = CRO_little_entente_bad
+					}
+					give_guarantee = CRO
+				}
+				add_opinion_modifier = {
+					target = ROM
+					modifier = CRO_little_entente_good 
+				}
+				give_guarantee = ROM
+			}
+			HUN = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_little_entente_bad
+				}
+				add_opinion_modifier = {
+					target = ROM
+					modifier = CRO_little_entente_bad
+				}
+				add_opinion_modifier = {
+					target = SLO
+					modifier = CRO_little_entente_bad
+				}
+			}
+			add_opinion_modifier = {
+				target = HUN
+				modifier = CRO_little_entente_bad
+			}
+		}
+	}
+	focus = {
+		id = CRO_anti_magyar_sentiment 
+		icon = GFX_focus_CRO_anti_magyar_sentiment
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_joint_friendship_proclamation }
+		mutually_exclusive = { }
+		relative_position_id = CRO_joint_friendship_proclamation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			country_exists = HUN
+		}
+
+		bypass = {
+			NOT = {
+				country_exists = HUN
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+			HUN = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_anti_magyar_sentiment_opinion 
+				}
+			}
+			add_opinion_modifier = {
+				target = HUN
+				modifier = CRO_anti_magyar_sentiment_opinion 
+			}
+		}
+	}
+	focus = {
+		id = CRO_the_poglavnik
+		icon = GFX_focus_CRO_power_struggle
+		x = -1
+		y = 1
+		prerequisite = { focus = CRO_anti_magyar_sentiment }
+		mutually_exclusive = { focus = CRO_let_himmler_fix_the_chaos focus = CRO_cooperation_with_the_allies }
+		relative_position_id = CRO_anti_magyar_sentiment 
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			NOT = { has_country_leader = CRO_vladko_macek ruling_only = yes }
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_power_balance = {
+				id = CRO_power_balance
+				left_side = CRO_kvaternik_side
+				right_side = CRO_pavelic_side
+			}
+		}
+	}
+	focus = {
+		id = CRO_cooperation_with_the_allies
+		icon = GFX_focus_ARG_join_the_allies
+		x = 1
+		y = 1
+		prerequisite = { focus = CRO_anti_magyar_sentiment }
+		mutually_exclusive = { focus = CRO_let_himmler_fix_the_chaos focus = CRO_the_poglavnik }
+		relative_position_id = CRO_anti_magyar_sentiment 
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			has_country_leader = CRO_vladko_macek
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_establish_the_ustashe_militia
+		icon = GFX_focus_CRO_ustashe_militia
+		alternate_icon = GFX_focus_CRO_ustashe_militia_alt
+		x = 4
+		y = 1
+		prerequisite = { focus = CRO_sign_the_tripartite_pact }
+		mutually_exclusive = { }
+		relative_position_id = CRO_sign_the_tripartite_pact
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_wild_ustashe
+			division_template = {
+				name = "Ustaška Vojnica"		# black legion paramilitaries
+				division_names_group = CRO_MIL_01
+			
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+					militia = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+				    division = "name = \"Poglavnikov Tjelesni Zdrug\" division_template = \"Ustaška Vojnica\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_croatian_legion
+		icon = GFX_goal_generic_axis_build_infantry
+		
+		prerequisite = { 
+			focus = CRO_establish_the_ustashe_militia
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = CRO_establish_the_ustashe_militia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+	focus = {
+		id = CRO_purchase_axis_equipment
+		icon = GFX_focus_BRA_acquire_german_tanks
+		
+		prerequisite = { 
+			focus = CRO_croatian_legion
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_croatian_legion
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_black_legion
+		icon = GFX_focus_ITA_blackshirts
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_establish_the_ustashe_militia }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_the_ustashe_militia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "Crna Legija"		# black legion paramilitaries
+				division_names_group = CRO_Legion_01
+			
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+				}
+				support = {
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"Prvi stajaći djelatni sdrug\" division_template = \"Crna Legija\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_railway_ustasha_brigades
+		icon = GFX_focus_generic_self_propelled_gun
+		x = 2
+		y = 1
+		prerequisite = { focus = CRO_black_legion }
+		mutually_exclusive = { }
+		relative_position_id = CRO_black_legion
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"1. Prometni Zdrug\" division_template = \"Ustaška Vojnica\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+				create_unit = {
+					division = "name = \"2. Prometni Zdrug\" division_template = \"Ustaška Vojnica\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = CRO_organize_the_ustashe
+		icon = GFX_focus_SWE_revoke_militia_law
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_black_legion }
+		mutually_exclusive = { }
+		relative_position_id = CRO_black_legion
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_ustashe_surveillance_service
+		icon = GFX_focus_generic_secret_service_agency
+		
+		prerequisite = { 
+			focus = CRO_establish_the_ustashe_militia
+		}
+		
+		mutually_exclusive = {
+		}
+		x = 2
+		y = 1
+		relative_position_id = CRO_establish_the_ustashe_militia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				if = {
+					limit = {
+						has_intelligence_agency = no
+					}
+					create_intelligence_agency = yes
+				}
+				add_ideas = CRO_uns_lar
+			}
+			else = {
+				add_ideas = CRO_uns
+			}
+		}
+	}
+	focus = {
+		id = CRO_recruit_SS_officers
+		icon = GFX_focus_CRO_recruit_SS_officers
+		x = -6
+		y = 2
+		prerequisite = { focus = CRO_sign_the_tripartite_pact }
+		mutually_exclusive = { }
+		relative_position_id = CRO_deal_with_italian_claims
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = CRO_SS_divisions
+		icon = GFX_focus_CRO_SS_divisions
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_recruit_SS_officers }
+		mutually_exclusive = { }
+		relative_position_id = CRO_recruit_SS_officers
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_technology = { bicycle_infantry = 1 }
+			division_template = {
+				name = "SS-Infanterie-Division"
+				override_model = GER_infantry_alt_0_entity
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					bicycle_battalion = { x = 2 y = 3 } # Represents Motorcycle Battalion
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					anti_tank_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 3 y = 4 }
+				}
+				support = {
+					signal_company = { x = 0 y = 0 } # Signals units were raised at the formation of the SS-VT in 1934.
+					armored_car_recon = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					field_hospital = { x = 0 y = 3 }
+				}
+				is_locked = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"7. SS-Freiwilligen Gebirgs-Division Prinz Eugen\" division_template = \"Kosaken-Kavallerie-Division\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+				create_unit = {
+					division = "name = \"13. Waffen-Gebirgs-Division der SS Handschar (kroatische Nr. 1.)\" division_template = \"Kosaken-Kavallerie-Division\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+				create_unit = {
+					division = "name = \"23. Waffen-Gebirgs-Division der SS Kama (kroatische Nr. 2)\" division_template = \"Kosaken-Kavallerie-Division\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_SS_cossack_corp
+		icon = GFX_focus_CRO_SS_cossack_corp
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_SS_divisions }
+		mutually_exclusive = { }
+		relative_position_id = CRO_SS_divisions
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "Kosaken-Kavallerie-Division"
+				override_model = GER_infantry_alt_0_entity
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+					cavalry = { x = 1 y = 3 }
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+					cavalry = { x = 2 y = 2 }
+					cavalry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+				}
+				support = {
+					signal_company = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+				}
+				is_locked = yes
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				create_unit = {
+					division = "name = \"1. Kosaken-Kavallerie-Division\" division_template = \"Kosaken-Kavallerie-Division\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+				create_unit = {
+					division = "name = \"2. Kosaken-Kavallerie-Division\" division_template = \"Kosaken-Kavallerie-Division\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+					owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_let_himmler_fix_the_chaos
+		icon = GFX_focus_GER_ascension_of_himmler
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_SS_cossack_corp }
+		mutually_exclusive = { focus = CRO_the_poglavnik focus = CRO_cooperation_with_the_allies }
+		relative_position_id = CRO_SS_cossack_corp
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			promote_character = {
+				character = CRO_heinrich_himmler
+				ideology = nazism
+			}
+		}
+	}
+	focus = {
+		id = CRO_SS_state
+		icon = GFX_focus_CRO_SS_state
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_let_himmler_fix_the_chaos }
+		mutually_exclusive = { }
+		relative_position_id = CRO_let_himmler_fix_the_chaos
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = CRO_SS
+		}
+		
+	}
+	focus = {
+		id = CRO_integrate_serbia
+		icon = GFX_focus_CRO_integarte_serbia
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_SS_state }
+		mutually_exclusive = { }
+		relative_position_id = CRO_SS_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SER
+						is_core_of = MNT
+					}
+					NOT = {
+						is_controlled_by = BUL
+					}
+				}
+				add_core_of = CRO
+				transfer_state_to = CRO
+			}
+		}
+	}
+	focus = {
+		id = CRO_martial_law
+		icon = GFX_focus_generic_military_dictatorship
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_integrate_serbia }
+		mutually_exclusive = { }
+		relative_position_id = CRO_integrate_serbia
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_wunderwaffen
+		icon = GFX_focus_GER_wunderwaffe
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_martial_law }
+		mutually_exclusive = { }
+		relative_position_id = CRO_martial_law
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_tomislavs_absolute_reign
+		icon = GFX_focus_CRO_tomislavs_absolute_reign
+		x = -13
+		y = 1
+		prerequisite = { focus = CRO_deal_with_italian_claims }
+		mutually_exclusive = { focus = CRO_sign_the_tripartite_pact }
+		relative_position_id = CRO_deal_with_italian_claims
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = CRO_kingdom
+			promote_character = CRO_prince_aimone
+			set_party_name = {
+				ideology = fascism
+				long_name = CRO_savoy_party_long
+				name = CRO_savoy_party
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = CRO_savoy_party_long
+				name = CRO_savoy_party
+			}
+			set_country_flag = aimone_in_croatia
+			hidden_effect = {
+				CRO = {
+					transfer_state = 102
+					transfer_state = 853
+					transfer_state = 976
+					add_to_variable = {
+						var = monarchistname 
+						value = 40
+					}
+				}
+				YUG = {
+					end_puppet = CRO
+					country_event = croatia.3
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_embrace_democratic_ideas
+		icon = GFX_goal_support_democracy
+		x = 15
+		y = 1
+		mutually_exclusive = { focus = CRO_stay_with_yugoslavia_for_now focus = CRO_reach_out_to_europe }
+		prerequisite = { focus = CRO_deal_with_intergral_strugle }
+		relative_position_id = CRO_deal_with_intergral_strugle		
+		cost = 1
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_puppet_of = YUG
+		}
+
+		bypass = {
+			NOT =  { is_puppet_of = YUG }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			add_political_power = 35
+		}
+	}
+	focus = {
+		id = CRO_yugoslavian_economy
+		icon = GFX_focus_generic_industry_1
+		x = 70
+		y = 0
+		mutually_exclusive = { }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			is_puppet_of = YUG
+		}
+
+		bypass = {
+			NOT =  { is_puppet_of = YUG }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			add_political_power = 35
+		}
+	}
+	focus = {
+		id = CRO_pave_the_roads
+		icon = GFX_focus_generic_road_investment
+		prerequisite = {
+			focus = CRO_yugoslavian_economy
+		}
+		relative_position_id = CRO_yugoslavian_economy
+		x = 0
+		y = 1
+		mutually_exclusive = { }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_kickstart_industrialization
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = {
+			focus = CRO_pave_the_roads
+		}
+		relative_position_id = CRO_pave_the_roads
+		x = -5
+		y = 1
+		mutually_exclusive = { focus = CRO_maintain_our_agriculture }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 25
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_maintain_our_agriculture
+		icon = GFX_focus_generic_farmland
+		prerequisite = {
+			focus = CRO_pave_the_roads
+		}
+		relative_position_id = CRO_pave_the_roads
+		x = 5
+		y = 1
+		mutually_exclusive = { focus = CRO_kickstart_industrialization }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_work_with_the_farmers
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = {
+			focus = CRO_maintain_our_agriculture
+		}
+		relative_position_id = CRO_maintain_our_agriculture
+		x = 0
+		y = 1
+		mutually_exclusive = { }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = CRO_connect_the_villages
+		icon = GFX_focus_generic_improve_roads 
+		
+		prerequisite = { 
+			focus = CRO_work_with_the_farmers
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = CRO_work_with_the_farmers
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRO_better_farming_equipment
+		icon = GFX_goal_generic_army_motorized 
+		
+		prerequisite = { 
+			focus = CRO_connect_the_villages
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_connect_the_villages
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = CRO_better_farming_equipment
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_balanced_budget
+		icon = GFX_goal_generic_consumer_goods
+		
+		prerequisite = { 
+			focus = CRO_better_farming_equipment
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_better_farming_equipment
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = CRO_balanced_budget
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_mining_industry
+		icon = GFX_focus_generic_mining_industry
+		
+		prerequisite = { 
+			focus = CRO_kickstart_industrialization
+			focus = CRO_maintain_our_agriculture
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = CRO_pave_the_roads
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_university_of_zagreb
+		icon = GFX_focus_research 
+		
+		prerequisite = { 
+			focus = CRO_mining_industry
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_mining_industry
+
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			controls_state = 109
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = CRO_croatian_socialism
+		icon = GFX_focus_CRO_croatian_socialism
+		
+		prerequisite = { 
+			focus = CRO_university_of_zagreb
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_university_of_zagreb
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = CRO_croatian_socialism
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_factories_for_an_army
+		icon = GFX_goal_generic_construction
+		prerequisite = {
+			focus = CRO_kickstart_industrialization
+		}
+		relative_position_id = CRO_kickstart_industrialization
+		x = 0
+		y = 1
+		mutually_exclusive = { }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_develop_military_industry
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = {
+			focus = CRO_factories_for_an_army
+		}
+		relative_position_id = CRO_factories_for_an_army
+		x = -1
+		y = 1
+		mutually_exclusive = { }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_develop_dalmatia
+		icon = GFX_focus_YUG_devolved_croatia
+		
+		prerequisite = { 
+			focus = CRO_develop_military_industry
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_develop_military_industry
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			build_railway = {
+				level = 1
+				start_province = 3601
+				target_province = 3924
+			}
+			build_railway = {
+				level = 2
+				start_province = 3924
+				target_province = 6889
+			}
+			random_owned_controlled_state = {
+				prioritize = { 103 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 971 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = if_controls_zara_tt
+			effect_tooltip = {
+				163 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						controls_state = 163
+					}
+					163 = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_industrialize_reclaimed_land
+		icon = GFX_focus_generic_industry_3
+		
+		prerequisite = { 
+			focus = CRO_develop_dalmatia
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_develop_dalmatia
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				controls_state = 163
+				controls_state = 974
+				controls_state = 852
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			custom_effect_tooltip = CRO_industrialize_reclaimed_land_tt
+			if = {
+				limit = { controls_state = 163 }
+				163 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { controls_state = 974 }
+				974 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { controls_state = 852 }
+				852 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_peoples_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		
+		prerequisite = { 
+			focus = CRO_mining_industry
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = -4
+		y = 1
+		relative_position_id = CRO_mining_industry
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_railways_for_the_people
+		icon = GFX_focus_generic_railroad
+		
+		prerequisite = { 
+			focus = CRO_peoples_industry
+		}
+		prerequisite = {
+			focus = CRO_develop_military_industry
+		}
+		prerequisite = {
+			focus = CRO_university_of_zagreb
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = CRO_peoples_industry
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_railways_for_the_military
+		icon = GFX_focus_generic_railway_gun
+		
+		prerequisite = { 
+			focus = CRO_expand_army_arsenal
+		}
+		prerequisite = {
+			focus = CRO_connect_the_villages
+		}
+		prerequisite = {
+			focus = CRO_university_of_zagreb
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = CRO_university_of_zagreb
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_widespread_industrialization
+		icon = GFX_focus_generic_industry_3
+		
+		prerequisite = { 
+			focus = CRO_peoples_industry
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_peoples_industry
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 109 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_expand_tourism
+		icon = GFX_focus_generic_adriatic_sea_focus 
+		
+		prerequisite = { 
+			focus = CRO_widespread_industrialization
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_widespread_industrialization
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_war = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			add_political_power = 50
+			every_state = {
+				limit = {
+					is_controlled_by = ROOT
+					OR = {
+						state = 103
+						state = 971
+						state = 163
+						state = 974
+						state = 852
+						state = 105
+					}
+				}
+				add_dynamic_modifier = { modifier = CRO_tourism_boom }
+			}
+			custom_effect_tooltip = CRO_expand_tourism_tt
+		}
+	}
+	focus = {
+		id = CRO_develop_zagreb
+		icon = GFX_goal_generic_construct_civ_factory 
+		
+		prerequisite = { 
+			focus = CRO_expand_tourism
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_expand_tourism
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 109 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_expand_army_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		
+		prerequisite = { 
+			focus = CRO_mining_industry
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 4
+		y = 1
+		relative_position_id = CRO_mining_industry
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_small_local_factories
+		icon = GFX_focus_CRO_small_local_factories
+		
+		prerequisite = { 
+			focus = CRO_expand_army_arsenal
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_expand_army_arsenal
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_develop_computing_technologies
+		icon = GFX_goal_tfv_generic_tech_sharing 
+		
+		prerequisite = { 
+			focus = CRO_small_local_factories
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_small_local_factories
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = CRO_zagreb_radio_station
+		icon = GFX_goal_generic_radar 
+		
+		prerequisite = { 
+			focus = CRO_develop_computing_technologies
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_develop_computing_technologies
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = YUG_electrify_the_countryside
+				bonus = 1
+				uses = 2
+				category = electronics
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = CRO_invite_foreign_investors
+		icon = GFX_goal_generic_intelligence_exchange 
+		
+		prerequisite = { 
+			focus = CRO_railways_for_the_people
+			focus = CRO_railways_for_the_military
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = CRO_railways_for_the_people
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_better_mining_industry
+		icon = GFX_focus_generic_resource_extraction
+		
+		prerequisite = { 
+			focus = CRO_invite_foreign_investors
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_invite_foreign_investors
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CRO_more_funding_for_education
+		icon = GFX_focus_research2 
+		
+		prerequisite = { 
+			focus = CRO_better_mining_industry
+		}
+		
+		prerequisite = { 
+			focus = CRO_develop_zagreb
+			focus = CRO_zagreb_radio_station
+		}
+		
+		mutually_exclusive = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = CRO_better_mining_industry
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			num_of_factories > 24
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+		
+		search_filters = { }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = CRO_right_to_a_army
+		icon = GFX_focus_generic_military_mission
+		x = 100
+		y = 0
+		mutually_exclusive = { }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			has_completed_focus = CRO_deal_with_intergral_strugle
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_croatian_armed_forces 
+		}
+	}
+	focus = {
+		id = CRO_establish_the_home_guard
+		x = -4
+		y = 1
+		icon = GFX_focus_CRO_establish_the_home_guard
+		prerequisite = { focus = CRO_right_to_a_army }
+		mutually_exclusive = { }
+		relative_position_id = CRO_right_to_a_army
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_domobranstvo_0
+		}
+	}
+	focus = {
+		id = CRO_train_new_units
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = CRO_establish_the_home_guard }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_the_home_guard
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_domobranstvo_0
+				add_idea = CRO_domobranstvo_1
+			}
+			109 = {
+				create_unit = {
+				    division = "name = \"1. Pješačka Divizija\" division_template = \"Hrvatsko domobranstvo\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"2. Pješačka Divizija\" division_template = \"Hrvatsko domobranstvo\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"3. Pješačka Divizija\" division_template = \"Hrvatsko domobranstvo\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"4. Pješačka Divizija\" division_template = \"Hrvatsko domobranstvo\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_cavalry_regiments
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = CRO_train_new_units }
+		mutually_exclusive = { focus = CRO_armor_regiments }
+		relative_position_id = CRO_train_new_units
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			109 = {
+				create_unit = {
+				    division = "name = \"1. Konjička Divizija\" division_template = \"Konjanička postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"2. Konjička Divizija\" division_template = \"Konjanička postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"3. Konjička Divizija\" division_template = \"Konjanička postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"4. Konjička Divizija\" division_template = \"Konjanička postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_armor_regiments
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_tankette
+		prerequisite = { focus = CRO_train_new_units }
+		mutually_exclusive = { focus = CRO_cavalry_regiments }
+		relative_position_id = CRO_train_new_units
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			109 = {
+				create_unit = {
+				    division = "name = \"1. Oklopna postrojba\" division_template = \"Oklopna postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				create_unit = {
+				    division = "name = \"2. Oklopna postrojba\" division_template = \"Oklopna postrojba\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_artillery_production
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = CRO_cavalry_regiments focus = CRO_armor_regiments }
+		mutually_exclusive = { }
+		relative_position_id = CRO_cavalry_regiments
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = CRO_establish_the_gendarmeries
+		x = 0
+		y = 1
+		icon = GFX_focus_CRO_genderarms
+		prerequisite = { focus = CRO_artillery_production }
+		mutually_exclusive = { }
+		relative_position_id = CRO_artillery_production
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_domobranstvo_1
+				add_idea = CRO_domobranstvo_2
+			}
+			load_oob = CRO_gendarmerie
+			109 = {
+				create_unit = {
+				    division = "name = \"Hrvatsko oružništvo\" division_template = \"Hrvatsko oružništvo\" start_experience_factor = 0.15 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+				    owner = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_build_a_war_academy
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = CRO_establish_the_gendarmeries }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_the_gendarmeries
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_domobranstvo_2
+				add_idea = CRO_domobranstvo_3
+			}
+		}
+	}
+	focus = {
+		id = CRO_conscription
+		x = -1
+		y = 1
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = CRO_build_a_war_academy }
+		mutually_exclusive = { focus = CRO_more_officers }
+		relative_position_id = CRO_build_a_war_academy
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_domobranstvo_3
+				add_idea = CRO_domobranstvo_5
+			}
+		}
+	}
+	focus = {
+		id = CRO_more_officers
+		x = 1
+		y = 1
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = CRO_build_a_war_academy }
+		mutually_exclusive = { focus = CRO_conscription }
+		relative_position_id = CRO_build_a_war_academy
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_domobranstvo_3
+				add_idea = CRO_domobranstvo_4
+			}
+		}
+	}
+	focus = {
+		id = CRO_establish_the_airforce
+		x = 0
+		y = 1
+		icon = GFX_focus_CRO_establish_the_airforce
+		prerequisite = { focus = CRO_right_to_a_army }
+		mutually_exclusive = { }
+		relative_position_id = CRO_right_to_a_army
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_airforce_0
+		}
+	}
+	focus = {
+		id = CRO_ace_academy
+		x = 0
+		y = 1
+		icon = GFX_focus_SOV_flying_clubs
+		prerequisite = { focus = CRO_establish_the_airforce }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_the_airforce
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_airforce_0
+				add_idea = CRO_airforce_1
+			}
+		}
+	}
+	focus = {
+		id = CRO_air_bases
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_air_bases
+		prerequisite = { focus = CRO_ace_academy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_ace_academy
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_aircraft_industry
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = CRO_air_bases }
+		mutually_exclusive = { }
+		relative_position_id = CRO_air_bases
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_army_support
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = CRO_aircraft_industry }
+		mutually_exclusive = { }
+		relative_position_id = CRO_aircraft_industry
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_airforce_1
+				add_idea = CRO_airforce_2
+			}
+			add_ace = {
+				name = "Mato"
+				surname = "Dukovac"
+				callsign = "Revenant"
+				type = fighter_genius
+			}
+		}
+	}
+	focus = {
+		id = CRO_air_doctorine
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = CRO_army_support }
+		mutually_exclusive = { }
+		relative_position_id = CRO_army_support
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			air_experience = 25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = CRO_developed_advanced_airplanes
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_armored_air_support
+		prerequisite = { focus = CRO_air_doctorine }
+		mutually_exclusive = { }
+		relative_position_id = CRO_air_doctorine
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_airforce_2
+				add_idea = CRO_airforce_3
+			}
+		}
+	}
+	focus = {
+		id = CRO_establish_the_navy
+		x = 4
+		y = 1
+		icon = GFX_focus_CRO_establish_the_navy
+		prerequisite = { focus = CRO_right_to_a_army }
+		mutually_exclusive = { }
+		relative_position_id = CRO_right_to_a_army
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_navy_0
+		}
+	}
+	focus = {
+		id = CRO_coastal_defence
+		x = 0
+		y = 1
+		icon = GFX_focus_FIN_coastal_defense
+		prerequisite = { focus = CRO_establish_the_navy }
+		mutually_exclusive = { }
+		relative_position_id = CRO_establish_the_navy
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CRO_navy_0
+				add_idea = CRO_navy_1
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_marine_infantry
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = CRO_coastal_defence }
+		mutually_exclusive = { }
+		relative_position_id = CRO_coastal_defence
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			has_tech = marines
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			navy_experience = 50
+			swap_ideas = {
+				remove_idea = CRO_navy_1
+				add_idea = CRO_navy_2
+			}
+		}
+	}
+	focus = {
+		id = CRO_build_new_dockyards
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = CRO_marine_infantry }
+		mutually_exclusive = { }
+		relative_position_id = CRO_marine_infantry
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_yugoslav_ships
+		x = 0
+		y = 1
+		icon = GFX_focus_invite_yugoslavia
+		prerequisite = { focus = CRO_build_new_dockyards }
+		mutually_exclusive = { }
+		relative_position_id = CRO_build_new_dockyards
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				if = { 
+					limit = {
+						YUG = { has_tech = advanced_ship_hull_light }
+					}
+#					hidden_effect = { add_manpower = 1000 }
+						create_equipment_variant = {
+							name = "250t class"	
+							type = ship_hull_light_4
+							name_group = YUG_DD_HISTORICAL
+							parent_version = 0
+							modules = {
+								fixed_ship_battery_slot = ship_light_battery_1
+								fixed_ship_anti_air_slot = ship_anti_air_1
+								fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = light_ship_engine_2
+								fixed_ship_torpedo_slot = ship_torpedo_1
+								mid_1_custom_slot = ship_mine_layer_1
+								rear_1_custom_slot = ship_depth_charge_1
+							}
+						}
+#					create_ship = { type = ship_hull_light_4 equipment_variant = "250t class" creator = CRO }
+#					create_ship = { type = ship_hull_light_4 equipment_variant = "250t class" creator = CRO }
+				}
+				else_if = {
+					limit = {
+						CRO = { has_tech = improved_ship_hull_light }
+					}
+#					hidden_effect = { add_manpower = 800 }
+						create_equipment_variant = {
+							name = "250t class"	
+							type = ship_hull_light_3
+							name_group = YUG_DD_HISTORICAL
+							parent_version = 0
+							modules = {
+								fixed_ship_battery_slot = ship_light_battery_1
+								fixed_ship_anti_air_slot = ship_anti_air_1
+								fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = light_ship_engine_2
+								fixed_ship_torpedo_slot = ship_torpedo_1
+								mid_1_custom_slot = ship_mine_layer_1
+								rear_1_custom_slot = ship_depth_charge_1
+							}
+						}
+#					create_ship = { type = ship_hull_light_3 equipment_variant = "250t class" creator = CRO }
+#					create_ship = { type = ship_hull_light_3 equipment_variant = "250t class" creator = CRO }
+				}
+				else = {
+#					hidden_effect = { add_manpower = 650 }
+						create_equipment_variant = {
+							name = "250t class"	
+							type = ship_hull_light_2
+							name_group = YUG_DD_HISTORICAL
+							parent_version = 0
+							modules = {
+								fixed_ship_battery_slot = ship_light_battery_1
+								fixed_ship_anti_air_slot = ship_anti_air_1
+								fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+								fixed_ship_radar_slot = empty
+								fixed_ship_engine_slot = light_ship_engine_2
+								fixed_ship_torpedo_slot = ship_torpedo_1
+								mid_1_custom_slot = ship_mine_layer_1
+								rear_1_custom_slot = ship_depth_charge_1
+							}
+						}
+#					create_ship = { type = ship_hull_light_2 equipment_variant = "Kotor Class" creator = CRO }
+#					create_ship = { type = ship_hull_light_2 equipment_variant = "Kotor Class" creator = CRO }
+				}
+			}
+			else = { #NO MTG
+				if = { 
+					limit = {
+						YUG = { has_tech = advanced_destroyer }
+					}
+#					hidden_effect = { add_manpower = 500 }
+						create_equipment_variant = {
+							name = "250t class"
+							type = destroyer_4
+							upgrades = {
+								ship_torpedo_upgrade = 4
+								destroyer_engine_upgrade = 2
+								ship_ASW_upgrade = 3
+								ship_anti_air_upgrade = 3
+							}
+						}
+#					create_ship = { type = destroyer_4 equipment_variant = "250t class" creator = CRO }
+#					create_ship = { type = destroyer_4 equipment_variant = "250t class" creator = CRO }
+				}
+				else_if = {
+					limit = {
+						YUG = { has_tech = improved_destroyer }
+					}
+#					hidden_effect = { add_manpower = 400 }
+						create_equipment_variant = {
+							name = "250t class"
+							type = destroyer_3
+							upgrades = {
+								ship_torpedo_upgrade = 3
+								destroyer_engine_upgrade = 2
+								ship_ASW_upgrade = 2
+								ship_anti_air_upgrade = 3
+							}
+						}
+#					create_ship = { type = destroyer_3 equipment_variant = "250t class" creator = CRO }
+#					create_ship = { type = destroyer_3 equipment_variant = "250t class" creator = CRO}
+				}
+				else = {
+#					hidden_effect = { add_manpower = 325 }
+					create_equipment_variant = {
+						name = "250t class"
+						type = destroyer_2
+						upgrades = {
+							ship_torpedo_upgrade = 2
+							destroyer_engine_upgrade = 1
+							ship_ASW_upgrade = 2
+							ship_anti_air_upgrade = 3
+						}
+					}
+#					create_ship = { type = destroyer_2 equipment_variant = "250t class" creator = YUG }
+#					create_ship = { type = destroyer_2 equipment_variant = "250t class" creator = YUG }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_italian_ships
+		x = 0
+		y = 1
+		icon = GFX_focus_ITA_italian_irredentism
+		prerequisite = { focus = CRO_yugoslav_ships }
+		mutually_exclusive = { }
+		relative_position_id = CRO_yugoslav_ships
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			transfer_ship = {
+				prefer_name = "G102"
+				type = battleship
+				target = CRO
+			}
+			transfer_ship = {
+				prefer_name = "G104"
+				type = battleship
+				target = CRO
+			}
+		}
+	}
+	focus = {
+		id = CRO_german_ships
+		x = 0
+		y = 1
+		icon = GFX_focus_BRA_german_submarine_development
+		prerequisite = { focus = CRO_italian_ships }
+		mutually_exclusive = { }
+		relative_position_id = CRO_italian_ships
+
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			YUG = {
+				transfer_ship = {
+					prefer_name = "KS-5"
+					type = battleship
+					target = CRO
+				}
+				transfer_ship = {
+					prefer_name = "KS-11"
+					type = battleship
+					target = CRO
+				}
+				transfer_ship = {
+					prefer_name = "KS-31"
+					type = battleship
+					target = CRO
+				}
+				transfer_ship = {
+					prefer_name = "KS-32"
+					type = battleship
+					target = CRO
+				}
+			}
+		}
+	}
+	focus = {
+		id = CRO_legalise_drunk_driving
+		icon = GFX_focus_CRO_legalise_drunk_driving
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CRO_develop_zagreb
+		}
+		mutually_exclusive = { }
+		relative_position_id = CRO_develop_zagreb
+		cost = 1
+	
+		ai_will_do = {
+			factor = 50
+		}
+	
+		available = {
+	
+		}
+	
+		bypass = {
+	
+		}
+	
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = CRO_drunk_driving
+		}
+	}
+}

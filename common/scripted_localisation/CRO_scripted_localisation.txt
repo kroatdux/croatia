@@ -1,0 +1,320 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { #
+	name = GetHSSLoyaltyLevel
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 0 compare = less_than }
+
+		}
+		localization_key = HSS_defunct
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 0 compare = greater_than_or_equals }
+			check_variable = { var = HSS_loyalty value = 20 compare = less_than }
+
+		}
+		localization_key = HSS_inconsequential
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 20 compare = greater_than_or_equals }
+			check_variable = { var = HSS_loyalty value = 40 compare = less_than }
+
+		}
+		localization_key = HSS_hostile
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 40 compare = greater_than_or_equals }
+			check_variable = { var = HSS_loyalty value = 60 compare = less_than }
+
+		}
+		localization_key = HSS_indifferent
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 60 compare = greater_than_or_equals }
+			check_variable = { var = HSS_loyalty value = 80 compare = less_than }
+
+		}
+		localization_key = HSS_friendly
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = HSS_loyalty value = 80 compare = greater_than_or_equals }
+			check_variable = { var = HSS_loyalty value = 100 compare = less_than }
+
+		}
+		localization_key = HSS_loyal
+	}
+}
+defined_text = { #
+	name = GetMonarchistLoyaltyLevel
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 0 compare = less_than }
+
+		}
+		localization_key = monarchist_defunct
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 0 compare = greater_than_or_equals }
+			check_variable = { var = monarchist_loyalty value = 20 compare = less_than }
+
+		}
+		localization_key = monarchist_inconsequential
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 20 compare = greater_than_or_equals }
+			check_variable = { var = monarchist_loyalty value = 40 compare = less_than }
+
+		}
+		localization_key = monarchist_hostile
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 40 compare = greater_than_or_equals }
+			check_variable = { var = monarchist_loyalty value = 60 compare = less_than }
+
+		}
+		localization_key = monarchist_indifferent
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 60 compare = greater_than_or_equals }
+			check_variable = { var = monarchist_loyalty value = 80 compare = less_than }
+
+		}
+		localization_key = monarchist_friendly
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchist_loyalty value = 80 compare = greater_than_or_equals }
+			check_variable = { var = monarchist_loyalty value = 100 compare = less_than }
+
+		}
+		localization_key = monarchist_loyal
+	}
+}
+defined_text = { #
+	name = GetUstasheLoyaltyLevel
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 0 compare = less_than }
+
+		}
+		localization_key = ustashe_defunct
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 0 compare = greater_than_or_equals }
+			check_variable = { var = ustashe_loyalty value = 20 compare = less_than }
+
+		}
+		localization_key = ustashe_inconsequential
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 20 compare = greater_than_or_equals }
+			check_variable = { var = ustashe_loyalty value = 40 compare = less_than }
+
+		}
+		localization_key = ustashe_hostile
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 40 compare = greater_than_or_equals }
+			check_variable = { var = ustashe_loyalty value = 60 compare = less_than }
+
+		}
+		localization_key = ustashe_indifferent
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 60 compare = greater_than_or_equals }
+			check_variable = { var = ustashe_loyalty value = 80 compare = less_than }
+
+		}
+		localization_key = ustashe_friendly
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = ustashe_loyalty value = 80 compare = greater_than_or_equals }
+			check_variable = { var = ustashe_loyalty value = 100 compare = less_than }
+
+		}
+		localization_key = ustashe_loyal
+	}
+}
+defined_text = { #
+	name = GetPartisanLoyaltyLevel
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 0 compare = less_than }
+
+		}
+		localization_key = partisan_defunct
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 0 compare = greater_than_or_equals }
+			check_variable = { var = partisan_loyalty value = 20 compare = less_than }
+
+		}
+		localization_key = partisan_inconsequential
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 20 compare = greater_than_or_equals }
+			check_variable = { var = partisan_loyalty value = 40 compare = less_than }
+
+		}
+		localization_key = partisan_hostile
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 40 compare = greater_than_or_equals }
+			check_variable = { var = partisan_loyalty value = 60 compare = less_than }
+
+		}
+		localization_key = partisan_indifferent
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 60 compare = greater_than_or_equals }
+			check_variable = { var = partisan_loyalty value = 80 compare = less_than }
+
+		}
+		localization_key = partisan_friendly
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = partisan_loyalty value = 80 compare = greater_than_or_equals }
+			check_variable = { var = partisan_loyalty value = 100 compare = less_than }
+
+		}
+		localization_key = partisan_loyal
+	}
+}
+defined_text = { #
+	name = GetChetnikLoyaltyLevel
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 0 compare = less_than }
+
+		}
+		localization_key = chetnik_defunct
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 0 compare = greater_than_or_equals }
+			check_variable = { var = chetnik_loyalty value = 20 compare = less_than }
+
+		}
+		localization_key = chetnik_inconsequential
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 20 compare = greater_than_or_equals }
+			check_variable = { var = chetnik_loyalty value = 40 compare = less_than }
+
+		}
+		localization_key = chetnik_hostile
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 40 compare = greater_than_or_equals }
+			check_variable = { var = chetnik_loyalty value = 60 compare = less_than }
+
+		}
+		localization_key = chetnik_indifferent
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 60 compare = greater_than_or_equals }
+			check_variable = { var = chetnik_loyalty value = 80 compare = less_than }
+
+		}
+		localization_key = chetnik_friendly
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = chetnik_loyalty value = 80 compare = greater_than_or_equals }
+			check_variable = { var = chetnik_loyalty value = 100 compare = less_than }
+
+		}
+		localization_key = chetnik_loyal
+	}
+}
+defined_text = { #
+	name = changemonarchistname
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchistname value = 0 compare = greater_than_or_equals }
+			check_variable = { var = monarchistname value = 20 compare = less_than }
+
+		}
+		localization_key = monarchistname_banate
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchistname value = 20 compare = greater_than_or_equals }
+			check_variable = { var = monarchistname value = 40 compare = less_than }
+
+		}
+		localization_key = monarchistname_habsburg
+	}
+	text = {
+		trigger = {
+			original_tag = CRO
+			check_variable = { var = monarchistname value = 40 compare = greater_than_or_equals }
+			check_variable = { var = monarchistname value = 60 compare = less_than }
+
+		}
+		localization_key = monarchistname_savoy
+	}
+}

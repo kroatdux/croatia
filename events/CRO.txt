@@ -1,0 +1,2317 @@
+add_namespace = croatia
+
+#HSS uprising
+country_event = {
+	id = croatia.1
+	title = croatia.1.t
+	desc = croatia.1.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.1.a
+		activate_mission = CRO_deal_with_hss_paramilitary 
+	}
+}
+
+#April war
+news_event = {
+	id = croatia.2
+	title = "April War"
+	desc = croatia.2.d
+	picture = GFX_news_event_april_war
+
+	major = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		YUG = {
+			has_defensive_war_with = GER
+			NOT = { has_global_flag = april_war }
+		}
+	}
+	
+	option = {
+		name = croatia.2.a
+		set_global_flag = april_war
+	}
+}
+#Yugoslavia looses Slovenia
+country_event = {
+	id = croatia.3
+	title = croatia.3.t
+	desc = croatia.3.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.3.a
+	}
+}
+
+#Croatia asks yugoslavia for cores
+country_event = {
+	id = croatia.4
+	title = croatia.4.t
+	desc = croatia.4.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.4.a
+		CRO = {
+			country_event = croatia.5
+			transfer_state = 103
+			transfer_state = 978
+			transfer_state = 979
+			transfer_state = 970
+			transfer_state = 971
+			transfer_state = 974
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.4.b
+		CRO = {
+			country_event = croatia.6
+		}
+	}
+}
+#yugoslavia accepts
+country_event = {
+	id = croatia.5
+	title = croatia.5.t
+	desc = croatia.5.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.5.a
+	}
+}
+
+#yugoslavia denies
+country_event = {
+	id = croatia.6
+	title = croatia.6.t
+	desc = croatia.6.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.6.a
+	}
+}
+#croatia asks unification with austria
+country_event = {
+	id = croatia.7
+	title = croatia.7.t
+	desc = croatia.7.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.7.a
+		CRO = {
+			country_event = croatia.8
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.7.b
+		CRO = {
+			country_event = croatia.9
+		}
+	}
+}
+#austria accepts
+country_event = {
+	id = croatia.8
+	title = croatia.8.t
+	desc = croatia.8.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.8.a
+		CRO = {
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+			}
+			set_capital = { state = 4 }
+		}
+		every_state = {
+			limit = {
+				is_core_of = AUS
+			}
+			add_core_of = CRO
+			remove_core_of = AUS
+		}
+		every_state = {
+			limit = {
+				is_core_of = SLV
+			}
+			add_core_of = CRO
+		}
+		AUS = {
+			every_unit_leader = {
+				set_nationality = CRO
+			}
+		}
+		set_cosmetic_tag = CRO_habsburg_monarchy
+	}
+}
+
+#austria denies
+country_event = {
+	id = croatia.9
+	title = croatia.9.t
+	desc = croatia.9.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.9.a
+		CRO = {
+			create_wargoal = {
+				type = annex_everything
+				target = AUS
+				expire = 180
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = AUS
+			}
+			add_core_of = CRO
+		}
+		every_state = {
+			limit = {
+				is_core_of = SLV
+			}
+			add_core_of = CRO
+		}
+		set_cosmetic_tag = CRO_habsburg_monarchy
+	}
+}
+#croatia wants hungary
+country_event = {
+	id = croatia.10
+	title = croatia.10.t
+	desc = croatia.10.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.10.a
+		CRO = {
+			country_event = croatia.11
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_completed_focus = HUN_invite_the_habsburg_prince
+				factor = 100
+			}
+		}
+	}
+	option = {
+		name = croatia.10.b
+		CRO = {
+			country_event = croatia.12
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+#HUN accepts
+country_event = {
+	id = croatia.11
+	title = croatia.11.t
+	desc = croatia.11.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.11.a
+		CRO = {
+			annex_country = {
+				target = HUN
+				transfer_troops = yes
+			}
+		}
+		HUN = {
+			every_unit_leader = {
+				set_nationality = CRO
+			}
+		}
+	}
+	option = {
+		name = croatia.11.b
+		trigger = {
+			HUN = {
+				has_completed_focus = HUN_invite_the_habsburg_prince
+			}
+		}
+		CRO = {
+			set_autonomy = {
+				target = HUN
+				autonomous_state = autonomy_personal_union
+			}
+		}
+		HUN = {
+			transfer_state = 970
+		}
+	}
+}
+
+#hun denies
+country_event = {
+	id = croatia.12
+	title = croatia.12.t
+	desc = croatia.12.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.12.a
+		CRO = {
+			create_wargoal = {
+				type = annex_everything
+				target = HUN
+				expire = 180
+			}
+		}
+	}
+}
+
+#croatia wants cze
+country_event = {
+	id = croatia.13
+	title = croatia.13.t
+	desc = croatia.13.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.13.a
+		CRO = {
+			country_event = croatia.14
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.13.b
+		CRO = {
+			country_event = croatia.15
+		}
+	}
+}
+#cze accepts
+country_event = {
+	id = croatia.14
+	title = croatia.14.t
+	desc = croatia.14.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.14.a
+		if = {
+			limit = {
+				HUN = { is_subject_of = CRO }
+			}
+			CRO = {
+				annex_country = {
+					target = CZE
+					transfer_troops = yes
+				}
+			}
+			CZE = {
+				every_unit_leader = {
+					set_nationality = CRO
+				}
+			}
+			HUN = {
+				transfer_state = 70
+				transfer_state = 71
+				transfer_state = 73
+				transfer_state = 664
+			}
+		}
+		else = {
+			CRO = {
+				annex_country = {
+					target = CZE
+					transfer_troops = yes
+				}
+			}
+			CZE = {
+				every_unit_leader = {
+					set_nationality = CRO
+				}
+			}
+		}
+	}
+}
+
+#cze denies
+country_event = {
+	id = croatia.15
+	title = croatia.15.t
+	desc = croatia.15.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.15.a
+		CRO = {
+			create_wargoal = {
+				type = annex_everything
+				target = CZE
+				expire = 180
+			}
+		}
+	}
+}
+
+#croatia wants galicia
+country_event = {
+	id = croatia.16
+	title = croatia.16.t
+	desc = croatia.16.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.16.a
+		CRO = {
+			country_event = croatia.17
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.16.b
+		CRO = {
+			country_event = croatia.18
+		}
+	}
+}
+#pol accepts
+country_event = {
+	id = croatia.17
+	title = croatia.17.t
+	desc = croatia.17.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.17.a
+		CRO = {
+			transfer_state = 88
+			transfer_state = 89
+			transfer_state = 91
+		}
+	}
+}
+
+#pol denies
+country_event = {
+	id = croatia.18
+	title = croatia.18.t
+	desc = croatia.18.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.18.a
+		CRO = {
+			create_wargoal = {
+				type = take_state_focus
+				target = POL
+				generator = { 88 89 91 }
+			}
+		}
+	}
+}
+#croatia wants tra
+country_event = {
+	id = croatia.19
+	title = croatia.19.t
+	desc = croatia.19.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.19.a
+		CRO = {
+			country_event = croatia.20
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.19.b
+		CRO = {
+			country_event = croatia.21
+		}
+	}
+}
+#rom accepts
+country_event = {
+	id = croatia.20
+	title = croatia.20.t
+	desc = croatia.20.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.20.a
+		if = {
+			limit = {
+				HUN = { is_subject_of = CRO }
+			}
+			CRO = {
+				transfer_state = 80
+			}
+			HUN = {
+				transfer_state = 76
+				transfer_state = 82
+				transfer_state = 83
+				transfer_state = 84
+			}
+		}
+		else = {
+			CRO = {
+				transfer_state = 76
+				transfer_state = 80
+				transfer_state = 82
+				transfer_state = 83
+				transfer_state = 84
+			}
+		}
+	}
+}
+
+#rom denies
+country_event = {
+	id = croatia.21
+	title = croatia.21.t
+	desc = croatia.21.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.21.a
+		CRO = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ROM
+				generator = { 76 80 82 83 84 }
+			}
+		}
+	}
+}
+#croatia wants south slavic lands
+country_event = {
+	id = croatia.22
+	title = croatia.22.t
+	desc = croatia.22.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.22.a
+		CRO = {
+			country_event = croatia.23
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.22.b
+		CRO = {
+			country_event = croatia.24
+		}
+	}
+}
+#yugo accepts
+country_event = {
+	id = croatia.23
+	title = croatia.23.t
+	desc = croatia.23.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.23.a
+		if = {
+			limit = {
+				HUN = { is_subject_of = CRO }
+			}
+			HUN = {
+				transfer_state = 45
+				transfer_state = 764
+			}
+			CRO = {
+				transfer_state = 104
+				transfer_state = 977
+				transfer_state = 804
+			}
+		}
+		else = {
+			CRO = {
+				transfer_state = 45
+				transfer_state = 104
+				transfer_state = 977
+				transfer_state = 804
+				transfer_state = 764
+			}
+		}
+		hidden_effect = {
+			YUG = {
+				set_cosmetic_tag = SER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SER
+				}
+				remove_core_of = SER
+			}
+		}
+	}
+}
+
+#yugo denies
+country_event = {
+	id = croatia.24
+	title = croatia.24.t
+	desc = croatia.24.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.24.a
+		CRO = {
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				generator = { 45 764 104 977 804 }
+			}
+		}
+	}
+}
+#croatia wants south tirol
+country_event = {
+	id = croatia.25
+	title = croatia.25.t
+	desc = croatia.25.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.25.a
+		CRO = {
+			country_event = croatia.26
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.25.b
+		CRO = {
+			country_event = croatia.27
+		}
+	}
+}
+#ita accepts
+country_event = {
+	id = croatia.26
+	title = croatia.26.t
+	desc = croatia.26.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.26.a
+		CRO = {
+			transfer_state = 39
+			transfer_state = 163
+			transfer_state = 850
+			transfer_state = 736
+			transfer_state = 852
+			transfer_state = 972
+		}
+	}
+}
+
+#ita denies
+country_event = {
+	id = croatia.27
+	title = croatia.27.t
+	desc = croatia.27.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.27.a
+		CRO = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ITA
+				generator = { 39 163 850 736 852 972 }
+			}
+		}
+	}
+}
+# CRO apologises to FRA
+country_event = {
+	id = croatia.28
+	title = croatia.28.t
+	desc = croatia.28.d
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.28.a
+	}
+}
+#old ban takes leadership
+country_event = {
+	id = croatia.29
+	title = croatia.29.t
+	desc = croatia.29.d
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.29.a
+		promote_character = CRO_ruzic_viktor
+	}
+	option = {
+		name = croatia.29.b
+		promote_character = CRO_ivan_skerlecz
+	}
+}
+country_event = {
+	id = croatia.30
+	title = croatia.30.t
+	desc = croatia.30.d
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.30.a
+		add_country_leader_role = {
+			character = CRO_vladko_macek 
+			promote_leader = yes
+			country_leader = {
+        			ideology = fascism_ideology
+				expire = "1965.1.1.1"
+				traits = {
+					radics_successor
+				}
+			}
+		}
+		hidden_effect = {
+			set_party_name = {
+				ideology = fascism
+				long_name = CRO_democratic_party_long
+				name = CRO_democratic_party
+			}
+		}
+	}
+	option = {
+		name = croatia.30.b
+		effect_tooltip = { promote_character = CRO_ante_pavelic }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #civil war in Italy
+	id = croatia.31
+	title = croatia.31.t
+	desc = croatia.31.d
+	picture = GFX_report_event_ITA_partisans
+
+	trigger = {
+		tag = CRO
+		controls_state = 103
+		NOT = { controls_state = 163 }
+		ITA = {
+			has_civil_war = yes
+		}
+	}
+
+	fire_only_once = yes
+
+	option = { #take Zara
+		name = better_yugo.85.a
+		ai_chance = {
+			base = 10
+		}
+		transfer_state = 163
+		103 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		804 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		977 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		973 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		163 = {
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+	}
+	
+	option = { #take Zara and Fiume
+		name = better_yugo.85.b
+		ai_chance = {
+			base = 10
+		}
+		transfer_state = 163
+		transfer_state = 972
+		103 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		804 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		977 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		973 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		163 = {
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		972 = {
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+	}
+	
+	option = { #don't take anything
+		name = better_yugo.85.c
+		ai_chance = {
+			base = 0
+		}
+		ITA = {
+			add_opinion_modifier = {
+				target = CRO
+				modifier = CRO_cooperation
+			}
+			add_ai_strategy = {
+				type = protect
+				id = "CRO"
+				value = 50
+			}
+		}
+		103 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		804 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		977 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+		973 = {
+			remove_dynamic_modifier = {
+				modifier = CRO_italian_zone
+			}
+			add_dynamic_modifier = {
+				modifier = CRO_german_zone
+			}
+		}
+	}
+}
+country_event = { #CRO invited other countries to partition poland
+	id = croatia.32
+	title = croatia.32.t
+	desc = croatia.32.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.32.a
+		ai_chance = {
+			base = 15
+		}
+		set_country_flag = agreed_to_partition_poland_flag
+		FROM = { country_event = croatia.33 }
+		if = {
+			limit = {
+				tag = SOV
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = UKR
+						is_core_of = BLR
+					}
+					is_owned_by = POL
+				}
+				SOV = { add_state_claim = PREV }
+			}
+		}
+		if = {
+			limit = {
+				tag = GER
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 85
+						state = 807
+						state = 86
+						state = 784
+					}
+					is_owned_by = POL
+				}
+				GER = { add_state_claim = PREV }
+			}
+		}
+	}
+	
+	option = { 	#no
+		name = croatia.32
+		ai_chance = {
+			base = 3
+			modifier = {
+				factor = 0
+				tag = LIT
+			}
+		}
+		FROM = { country_event = croatia.34 }
+	}
+}
+
+country_event = { #country agrees to partition poland
+	id = croatia.33
+	title = croatia.33.t
+	desc = croatia.33.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.33.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #country declines the offer to partition poland
+	id = croatia.34
+	title = croatia.34.t
+	desc = croatia.34.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.34.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #sending the ultimatum to poland
+	id = croatia.35
+	title = croatia.35.t
+	desc = croatia.35.d
+	picture = GFX_report_event_lithuanian_ultimatum
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.35.a
+		ai_chance = {
+			base = 15
+		}
+		POL = { country_event = croatia.36 }
+	}
+}
+
+country_event = { #ultimatum about the partition of poland
+	id = croatia.36
+	title = croatia.36.t
+	desc = croatia.36.d
+	picture = GFX_report_event_lithuanian_ultimatum
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.36.a
+		ai_chance = {
+			base = 10
+		}
+		FROM = { country_event = croatia.37 }
+		if = {
+			limit = {
+				SOV = {
+					has_country_flag = agreed_to_partition_poland_flag
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BLR
+						AND = {
+							is_core_of = UKR
+							NOT = { state = 89 }
+							NOT = { state = 91 }
+						}
+					}
+					is_owned_by = ROOT
+				}
+				transfer_state_to = SOV
+			}
+			if = {
+				limit = {
+					LIT = {
+						NOT = { has_country_flag = agreed_to_partition_poland_flag }
+					}
+				}
+				SOV = { transfer_state = 784 }
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = agreed_to_partition_poland_flag
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 86
+						state = 85
+						state = 807
+						state = 762
+					}
+					is_owned_by = ROOT
+				}
+				transfer_state_to = GER
+			}
+		}
+		if = {
+			limit = {
+				LIT = {
+					has_country_flag = agreed_to_partition_poland_flag
+				}
+			}
+			LIT = { transfer_state = 784 }
+		}
+	}
+	
+	option = { 	#no
+		name = croatia.36.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				GER = { has_country_flag = agreed_to_partition_poland_flag }
+				SOV = { has_country_flag = agreed_to_partition_poland_flag }
+			}
+			modifier = {
+				factor = 0.1
+				NOT = {
+					GER = { has_country_flag = agreed_to_partition_poland_flag }
+					SOV = { has_country_flag = agreed_to_partition_poland_flag }
+				}
+			}
+			modifier = {
+				factor = 5
+				owns_state = 88
+			}
+		}
+		FROM = { country_event = croatia.38 }
+	}
+}
+
+country_event = { #poland gives up
+	id = croatia.37
+	title = croatia.37.t
+	desc = croatia.37.d
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.37.a
+		ai_chance = {
+			base = 15
+		}
+		if = {
+			limit = {
+				POL = {
+					OR = {
+						owns_state = 88
+						owns_state = 89
+						owns_state = 91
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = POL
+					OR = {
+						state = 88
+						state = 89
+						state = 91
+					}
+				}
+				transfer_state_to = ROOT
+			}
+		}
+		else = {
+			puppet = POL
+		}
+	}
+}
+
+country_event = { #poland refuses
+	id = croatia.38
+	title = croatia.38.t
+	desc = croatia.38.d
+	picture = GFX_report_event_poland_rejects
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.38.a
+		ai_chance = {
+			base = 15
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = POL
+		}
+		every_country = {
+			limit = {
+				has_country_flag = agreed_to_partition_poland_flag
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = POL
+			}
+		}
+	}
+}
+country_event = { #CRO wants a personal union with POL
+	id = croatia.39
+	title = croatia.39.t
+	desc = croatia.39.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.39.a
+		ai_chance = {
+			base = 10
+		}
+		FROM = { country_event = croatia.41 }
+	}
+	
+	option = { 	#no
+		name = croatia.39.b
+		ai_chance = {
+			base = 0 #I don't want the ai to disagree since it's already pretty rare that this would happen,
+		}			 #but I also don't want it to be forced
+	}
+}
+
+country_event = { #CRO demands that poland becomes a monarchy and crowns a habsburg
+	id = croatia.40
+	title = croatia.40.t
+	desc = croatia.40.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.40.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 3
+				has_opinion = {
+					target = CRO
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 5
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 10
+				is_in_faction_with = FROM
+			}
+		}
+		FROM = { country_event = croatia.42 }
+	}
+	
+	option = { 	#no
+		name = croatia.40.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = CRO
+					value < -50
+				}
+			}
+			modifier = {
+				factor = 3
+				has_government = fascism
+			}
+		}
+		FROM = { country_event = croatia.43 }
+	}
+}
+
+country_event = { #poland agrees to personal union
+	id = croatia.41
+	title = croatia.41.t
+	desc = croatia.41.d
+	picture = GFX_report_event_soviet_finnish_pact
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.41.a
+		ai_chance = {
+			base = 8
+		}
+		set_autonomy = {
+			target = POL
+			autonomous_state = autonomy_personal_union
+		}
+	}
+}
+
+country_event = { #poland agrees to crown Olbarcht
+	id = croatia.42
+	title = croatia.42.t
+	desc = croatia.42.d
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.42.a
+		ai_chance = {
+			base = 8
+		}
+		POL = {
+			set_cosmetic_tag = POL_KINGDOM
+			promote_character = POL_karl_albrecht
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = POL_habsburg_party
+				name = POL_habsburg_party 
+			}
+			unlock_national_focus = POL_habsburg
+		}
+		puppet = POL
+	}
+}
+
+country_event = { #poland doesn't agree to crown Olbarcht
+	id = croatia.43 
+	title = croatia.43.t
+	desc = croatia.43.d
+	picture = GFX_report_event_poland_rejects
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.43.a
+		ai_chance = {
+			base = 8
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+country_event = { #if poland is a puppet of habsburg CRO, they can install Karl Olbracht as a king
+	id = croatia.44
+	title = croatia.44.t
+	desc = croatia.44.d
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = CRO
+		has_government = neutrality
+		NOT = { POL = { has_country_leader = { character = POL_karl_albrecht ruling_only = yes } } }
+		POL = { is_subject_of = ROOT }
+	}
+	
+	option = { 	#ok
+		name = croatia.44.a
+		ai_chance = {
+			base = 10
+		}
+		POL = {
+			add_stability = -0.05
+			set_cosmetic_tag = POL_KINGDOM
+			promote_character = POL_karl_albrecht
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = POL_habsburg_party
+				name = POL_habsburg_party 
+			}
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				unlock_national_focus = POL_habsburg
+			}
+		}
+	}
+	
+	option = { 	#nope
+		name = croatia.44.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#lithuania event
+country_event = {
+	id = croatia.45
+	title = croatia.45.t
+	desc = croatia.45.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.45.a
+		CRO = {
+			country_event = croatia.46
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.45.b
+		CRO = {
+			country_event = croatia.47
+		}
+	}
+}
+#lit accepts
+country_event = {
+	id = croatia.46
+	title = croatia.46.t
+	desc = croatia.46.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.46.a
+		LIT = {
+			effect_tooltip = { set_cosmetic_tag = GREATER_LIT_neutrality }
+			hidden_effect = {
+				set_cosmetic_tag = GREATER_LIT
+			}
+			promote_character = LIT_karl_gero
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = LIT_von_urach_party
+				name = LIT_von_urach_party
+			}
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				unlock_national_focus = LIT_a_king_for_our_people
+			}
+		}
+		puppet = LIT
+	}
+}
+
+#lit denies
+country_event = {
+	id = croatia.47
+	title = croatia.15.t
+	desc = croatia.15.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.15.a
+		CRO = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LIT
+				expire = 180
+			}
+		}
+	}
+}
+country_event = { #CRO united baltic duchy
+	id = croatia.48
+	title = croatia.48.t
+	desc = croatia.48.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.48.a
+		ai_chance = {
+			base = 15
+		}
+		CRO = { country_event = croatia.49 }
+		if = {
+			limit = {
+				tag = EST
+			}
+			set_global_flag = CRO_EST_united_duchy
+			every_state = {
+				limit = {
+					is_core_of = EST
+				}
+				add_core_of = UBD
+			}
+			UBD = {
+				annex_country = {
+					target = LAT
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = LAT
+			}
+			set_global_flag = CRO_LAT_united_duchy
+			every_state = {
+				limit = {
+					is_core_of = LAT
+				}
+				add_core_of = UBD
+			}
+			UBD = {
+				annex_country = {
+					target = LAT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	
+	option = { 	#no
+		name = croatia.48.b
+		ai_chance = {
+			base = 0
+		}
+		CRO = { country_event = croatia.50 }
+		every_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_core_of = UBD
+		}
+	}
+}
+
+country_event = { #country agrees to partition poland
+	id = croatia.49
+	title = croatia.49.t
+	desc = croatia.49.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.49.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #country declines the offer to partition poland
+	id = croatia.50
+	title = croatia.50.t
+	desc = croatia.49.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.50.a
+		ai_chance = {
+			base = 15
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = CRO_EST_united_duchy }
+			}
+			CRO = {
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = EST
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = CRO_LAT_united_duchy }
+			}
+			CRO = {
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = LAT
+					expire = 180
+				}
+			}
+		}
+	}
+}
+country_event = { #CRO partition ita
+	id = croatia.51
+	title = croatia.51.t
+	desc = croatia.51.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.51.a
+		ai_chance = {
+			base = 15
+		}
+		FROM = { 
+			country_event = croatia.52
+		}
+		every_state = {
+			limit = {
+				is_core_of = ITA
+				is_claimed_by = CRO
+			}
+			remove_claim_by = CRO
+			transfer_state_to = CRO
+		}
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			unlock_national_focus = ITA_monarchia_d_italia
+		}
+		puppet = ITA
+	}
+	
+	option = { 	#no
+		name = croatia.51.b
+		ai_chance = {
+			base = 3
+		}
+		FROM = { country_event = croatia.53 }
+	}
+}
+
+country_event = { #ita agrees
+	id = croatia.52
+	title = croatia.52.t
+	desc = croatia.52.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.52.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #ita declines
+	id = croatia.53
+	title = croatia.53.t
+	desc = croatia.53.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.53.a
+		ai_chance = {
+			base = 15
+		}
+		CRO = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ITA
+				expire = 180
+			}
+		}
+	}
+}
+country_event = { #CRO demand lowlands
+	id = croatia.54
+	title = croatia.54.t
+	desc = croatia.54.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.54.a
+		ai_chance = {
+			base = 15
+		}
+		FROM = { 
+			country_event = croatia.55
+		}
+		if = {
+			limit = {
+				tag = HOL
+			}
+			CRO = { 
+				set_global_flag = CRO_HOL_annexed
+				annex_country = {
+					target = HOL
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = BEL
+			}
+			set_global_flag = CRO_BEL_annexed
+			CRO = { 
+				annex_country = {
+					target = BEL
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = LUX
+			}
+			set_global_flag = CRO_LUX_annexed
+			CRO = { 
+				annex_country = {
+					target = LUX
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	
+	option = { 	#no
+		name = croatia.54.b
+		ai_chance = {
+			base = 3
+		}
+		FROM = { country_event = croatia.56 }
+	}
+}
+
+country_event = { #benelux agrees
+	id = croatia.55
+	title = croatia.55.t
+	desc = croatia.55.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.55.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #benelux declines
+	id = croatia.56
+	title = croatia.56.t
+	desc = croatia.56.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.56.a
+		ai_chance = {
+			base = 15
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_HOL_annexed }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = annex_everything
+					target = HOL
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_BEL_annexed }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = annex_everything
+					target = BEL
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_LUX_annexed }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = annex_everything
+					target = LUX
+					expire = 180
+				}
+			}
+		}
+	}
+}
+#croatia wants swi
+country_event = {
+	id = croatia.57
+	title = croatia.57.t
+	desc = croatia.57.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.57.a
+		CRO = {
+			country_event = croatia.58
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.57.b
+		CRO = {
+			country_event = croatia.59
+		}
+	}
+}
+#swi accepts
+country_event = {
+	id = croatia.58
+	title = croatia.58.t
+	desc = croatia.58.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.58.a
+		CRO = {
+			annex_country = {
+				target = SWI
+				transfer_troops = yes
+			}
+		}
+		SWI = {
+			every_unit_leader = {
+				set_nationality = CRO
+			}
+		}
+	}
+}
+
+#cze denies
+country_event = {
+	id = croatia.59
+	title = croatia.59.t
+	desc = croatia.59.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.59.a
+		CRO = {
+			create_wargoal = {
+				type = annex_everything
+				target = SWI
+				expire = 180
+			}
+		}
+	}
+}
+# CRO wants burgundy
+country_event = {
+	id = croatia.60
+	title = croatia.60.t
+	desc = croatia.60.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.60.a
+		CRO = {
+			country_event = croatia.61
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.60.b
+		CRO = {
+			country_event = croatia.62
+		}
+	}
+}
+#pol accepts
+country_event = {
+	id = croatia.61
+	title = croatia.61.t
+	desc = croatia.61.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.61.a
+		CRO = {
+			transfer_state = 28
+			transfer_state = 735
+		}
+	}
+}
+
+#pol denies
+country_event = {
+	id = croatia.62
+	title = croatia.62.t
+	desc = croatia.62.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.62.a
+		CRO = {
+			create_wargoal = {
+				type = take_state_focus
+				target = FRA
+				generator = { 28 735 }
+			}
+		}
+	}
+}
+#finland monarchy
+country_event = {
+	id = croatia.63
+	title = croatia.63.t
+	desc = croatia.63.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.63.a
+		CRO = {
+			country_event = croatia.64
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = croatia.63.b
+		CRO = {
+			country_event = croatia.65
+		}
+	}
+}
+#fin accepts
+country_event = {
+	id = croatia.64
+	title = croatia.64.t
+	desc = croatia.64.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.64.a
+		FIN = {
+			add_country_leader_role = {
+				character =  FIN_prince_wolfgang_von_hesse
+				promote_leader = yes
+				country_leader = {
+					ideology = despotism
+					expire = "1965.1.1.1"
+					traits = { crown_prince_of_finland personal_agenda_von_hesse }
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = FIN_neutrality_party_monarchist_long
+				name = FIN_neutrality_party_monarchist
+			}
+
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.3
+			}
+
+			if = {
+				limit = {
+					has_completed_focus = FIN_greater_finland
+				}
+				set_cosmetic_tag = FIN_greater_kingdom_of_finland
+			}
+			else = {
+				set_cosmetic_tag = FIN_kingdom_of_finland
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				complete_national_focus = FIN_the_finnish_throne
+			}
+		}
+		puppet = FIN
+	}
+}
+
+#fin denies
+country_event = {
+	id = croatia.65
+	title = croatia.65.t
+	desc = croatia.65.d
+	picture = GFX_report_event_gre_militaristic_march
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.65.a
+		CRO = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LIT
+				expire = 180
+			}
+		}
+	}
+}
+country_event = { #CRO puppet nordic
+	id = croatia.66
+	title = croatia.66.t
+	desc = croatia.66.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	
+	option = { 	#ok
+		name = croatia.66.a
+		ai_chance = {
+			base = 15
+		}
+		FROM = { 
+			country_event = croatia.67
+		}
+		if = {
+			limit = {
+				tag = DEN
+			}
+			set_global_flag = CRO_DEN_puppeted
+			DEN = {
+				set_cosmetic_tag = DEN_neutrality
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					unlock_national_focus = DEN_king_assumes_power
+					DEN_the_king_takes_over = yes
+				}
+				else = {
+					set_party_name = { 
+						ideology = neutrality 
+						long_name = DEN_neutrality_monarchist_party_long
+						name = DEN_neutrality_monarchist_party
+					}
+					recruit_character = DEN_christian_x
+					promote_character = DEN_christian_x
+				}
+			}
+			CRO = { puppet = DEN }
+		}
+		if = {
+			limit = {
+				tag = SWE
+			}
+			set_global_flag = CRO_SWE_puppeted
+			SWE = {
+				set_cosmetic_tag = SWE_neutrality
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					unlock_national_focus = SWE_king_in_council
+				}
+				else = {
+					recruit_character = SWE_king_gustaf_v
+				}
+				SWE_king_gustaf_v = {
+					add_country_leader_role = {
+						country_leader={
+							ideology=centrism
+							expire="1965.1.1.1"
+							id = -1
+							traits = { SWE_ardent_conservative likes_germany }
+						}
+						promote_leader = yes
+					}
+				}
+				add_field_marshal_role = {
+					character = "SWE_king_gustaf_v"
+					traits={ politically_connected media_personality old_guard }
+					skill=1
+					attack_skill=1
+					defense_skill=1
+					planning_skill=1
+					logistics_skill=1
+					
+				}
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					unlock_national_focus = SWE_king_in_council
+				}
+				set_party_name = { 
+					ideology = neutrality 
+					long_name = SWE_kings_party_long
+					name = SWE_kings_party
+				}
+			}
+			CRO = { puppet = SWE }
+		}
+		if = {
+			limit = {
+				tag = NOR
+			}
+			set_global_flag = CRO_NOR_puppeted
+			NOR = {
+				set_cosmetic_tag = NOR_neutrality_purple_flag
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					unlock_national_focus = NOR_the_kingdom_of_norway
+				}
+				else = {
+					recruit_character = NOR_king_haakon_vii
+				}
+				set_party_name = { 
+					ideology = neutrality 
+						name = NOR_Wedel-Jarlsberg_regency_name
+						long_name = NOR_Wedel-Jarlsberg_regency_long_name
+				}
+				promote_character = NOR_king_haakon_vii
+			}
+			CRO = { puppet = NOR }
+		}
+		if = {
+			limit = {
+				tag = ICE
+			}
+			set_cosmetic_tag = ICE_neutrality 
+			set_global_flag = CRO_ICE_puppeted
+			ICE = {
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					unlock_national_focus = ICE_the_kingdom_of_iceland
+				}
+			}
+			CRO = { puppet = ICE }
+		}
+	}
+	
+	option = { 	#no
+		name = croatia.66.b
+		ai_chance = {
+			base = 3
+		}
+		FROM = { country_event = croatia.68 }
+	}
+}
+country_event = { #benelux agrees
+	id = croatia.67
+	title = croatia.67.t
+	desc = croatia.67.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.67.a
+		ai_chance = {
+			base = 15
+		}
+	}
+}
+
+country_event = { #benelux declines
+	id = croatia.68
+	title = croatia.68.t
+	desc = croatia.68.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { 	#ok
+		name = croatia.68.a
+		ai_chance = {
+			base = 15
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_DEN_puppeted }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = DEN
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_SWE_puppeted }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SWE
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_NOR_puppeted }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = NOR
+					expire = 180
+				}
+			}
+		}
+		if = {
+			limit = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = CRO_ICE_puppeted }
+					}
+				}
+			}
+			CRO = { 
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = ICE
+					expire = 180
+				}
+			}
+		}
+	}
+}
+news_event = { #second royal dictatorship
+	id = croatia.69
+	title = croatia.69.t
+	desc = croatia.69.d
+	picture = GFX_news_event_yugoslav_coup
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = croatia.69.a
+		trigger = {
+			NOT = {
+				TAG = CRO
+			}
+		}
+	}
+	option = {
+		name = croatia.69.b
+		trigger = { TAG = CRO }
+	}
+}

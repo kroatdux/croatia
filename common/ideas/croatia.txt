@@ -1,0 +1,640 @@
+ideas = {
+
+	country = {
+		CRO_croatian_independence = {
+		
+			picture = cro_croatian_independence
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				war_support_factor = 0.05
+			}
+			
+		}
+		CRO_croatian_armed_forces = {
+		
+			picture = cro_croatian_armed_forces
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			}
+			
+		}
+		CRO_cvetkovic_macek_agreement = {
+		
+			picture = HUN_treaty_of_triannon
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.50
+			}
+			
+		}
+		CRO_yugoslav_puppet = {
+		
+			picture = cro_yugoslav_puppet
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+				is_puppet_of = YUG
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.10
+				local_resources_factor = -0.10
+				trade_opinion_factor = -0.20
+				autonomy_gain = 0.10
+			}
+			
+		}
+		CRO_discouragement_of_joining_army = {
+		
+			picture = generic_army_problems
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+				is_puppet_of = YUG
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population_factor = -0.1
+			}
+			
+		}
+		CRO_domobranstvo_0 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.02
+			}
+		}
+		CRO_domobranstvo_1 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.02
+				army_org_factor = 0.02
+				army_core_defence_factor = 0.04
+			}
+		}
+		CRO_domobranstvo_2 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.02
+				army_org_factor = 0.05
+				army_core_defence_factor = 0.04
+				experience_gain_military_police_combat_factor = 1
+			}
+		}
+		CRO_domobranstvo_3 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.05
+				army_org_factor = 0.1
+				army_core_defence_factor = 0.04
+				experience_gain_military_police_combat_factor = 1
+			}
+		}
+		CRO_domobranstvo_4 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.05
+				army_org_factor = 0.1
+				army_core_defence_factor = 0.04
+				experience_gain_military_police_combat_factor = 1
+				army_attack_factor = 0.02
+				training_time_factor = 0.15
+			}
+		}
+		CRO_domobranstvo_5 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_domobranstvo
+			modifier = {
+				experience_gain_army = 0.05
+				army_org_factor = 0.1
+				army_core_defence_factor = 0.04
+				experience_gain_military_police_combat_factor = 1
+				conscription = 0.015
+				training_time_factor = 0.15
+			}
+		}
+		CRO_navy_0 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_navy
+			modifier = {
+				experience_gain_navy = 0.02
+			}
+		}
+		CRO_navy_1 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_navy
+			modifier = {
+				experience_gain_navy = 0.02
+				production_speed_coastal_bunker_factor = 0.1
+				repair_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		CRO_navy_2 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_navy
+			modifier = {
+				experience_gain_navy = 0.02
+				production_speed_coastal_bunker_factor = 0.1
+				repair_speed_coastal_bunker_factor = 0.1
+				naval_invasion_capacity	= 12
+				extra_marine_supply_grace = 48
+			}
+		}
+		CRO_airforce_0 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_airforce
+			modifier = {
+				experience_gain_air = 0.02
+			}
+		}
+		CRO_airforce_1 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_airforce
+			modifier = {
+				experience_gain_air = 0.02
+				air_ace_generation_chance_factor = 0.15
+				land_doctrine_cost_factor = -0.10
+			}
+		}
+		CRO_airforce_2 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_airforce
+			modifier = {
+				experience_gain_air = 0.02
+				air_ace_generation_chance_factor = 0.15
+				land_doctrine_cost_factor = -0.10
+				air_superiority_efficiency = 0.05
+				air_cas_present_factor = 0.10
+				ground_attack_factor = 0.05
+			}
+		}
+		CRO_airforce_3 = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = cro_airforce
+			modifier = {
+				experience_gain_air = 0.02
+				air_ace_generation_chance_factor = 0.15
+				land_doctrine_cost_factor = -0.10
+				air_superiority_efficiency = 0.05
+				air_cas_present_factor = 0.10
+				ground_attack_factor = 0.05
+				air_range_factor = 0.10
+				air_agility_factor = 0.05
+				air_defence_factor = 0.1
+			}
+		}
+		CRO_tomislav_ii_idea = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = portrait_ITA_prince_aimone_small
+			modifier = {
+				political_power_factor = 0.05
+				naval_coordination = 0.1
+				army_breakthrough_against_minor_factor = 0.1
+			}
+		}
+		CRO_naval_restrictions = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_navy_bonus
+			
+			modifier = {
+				production_speed_dockyard_factor = -0.4
+				industrial_capacity_dockyard = -0.15
+				production_cost_max_ship_hull_cruiser = 5300
+				production_cost_max_ship_hull_heavy = 10000
+				production_cost_max_ship_hull_carrier = 9500
+			}
+			targeted_modifier = {
+				tag = ITA
+				cic_to_target_factor = 0.1
+			}
+		}
+		CRO_german_propaganda = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = german_advisors
+			modifier = {
+				war_support_factor = 0.05
+			}
+		}
+		CRO_drunk_driving = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = ROM_king_carol_ii_hedonist
+			modifier = {
+				motorized_attack_factor = 0.1
+				custom_modifier_tooltip = reliability
+				stability_factor = 0.1
+			}
+		}
+		CRO_croatian_socialism = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = 0.10
+                industry_repair_factor = 0.25
+				industrial_capacity_factory = 0.10
+			}
+		}
+		CRO_uns = {
+			name = CRO_uns
+		
+			picture = generic_secret_police
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				decryption = 1
+				encryption = 1
+				resistance_target = -0.05
+			}
+			
+		}
+		CRO_uns_lar = {
+			name = CRO_uns
+		
+			picture = generic_secret_police
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				agency_upgrade_time = -0.15
+				intel_network_gain_factor = 0.1
+				foreign_subversive_activites = -0.2
+				operative_slot = 1
+			}
+			
+		}
+		CRO_royal_dictatorship = {
+			picture = CRO_royal_dictatorship
+				
+			allowed = {
+				always = no
+			}
+				
+			available = {
+				has_government = neutrality
+			}
+				
+			cancel = {
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			on_add = {
+			}
+
+			removal_cost = -1
+				
+			modifier = {
+				political_power_factor = 0.1
+				communism_drift = -0.05
+			}
+		}
+	}
+	industrial_concern = {
+
+		ganz_kroatien_slawonien = {
+			allowed = { original_tag = CRO }
+			traits = {
+				industrial_concern
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+
+		elektra = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				electronics_concern
+			}
+			modifier = {
+				production_speed_radar_station_factor = 0.05
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+		}
+
+		ina = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				mining_company
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.05
+			}
+			research_bonus = {
+				synth_resources = 0.1
+			}
+		}
+	}
+
+	#### Weapons Manufacturer ####
+	materiel_manufacturer = {
+		designer = yes
+
+		prva_hrvatska_tvornica_rublja = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				infantry_equipment_manufacturer
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+
+		taz = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				motorized_equipment_manufacturer
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+		}
+	}
+
+	#### Heavy Equipment Manufacturer ####
+	tank_manufacturer = {
+		designer = yes
+
+		tzv_gredelj = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				tank_manufacturer
+			}
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+	}
+
+	#### Air and Naval Manufacturer ####
+	naval_manufacturer = {
+		designer = yes
+
+		brodosplit = {
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				mediterranean_naval_manufacturer 
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+		}
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+
+		CRO_ikarus = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				original_tag = CRO	
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				# produced under licence: Hawker Fury, Potez 25, Avia BH-33, own flying boats and recon aircrafts
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		CRO_fiat_aviazione = { #NORTH
+			picture	= ITA_fiat_aviazione
+
+			allowed = {
+				original_tag = CRO
+			}
+
+			available = {
+			}
+
+			cost = 75
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	}
+}
