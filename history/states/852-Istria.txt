@@ -10,7 +10,7 @@ state = {
 	history = {
 		owner = ITA
 		victory_points = { #Fiume (Rijeka)
-			11564 1 
+			11564 3
 		}
 		victory_points = { #Pola (Pula)
 			11735 1 

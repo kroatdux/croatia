@@ -597,7 +597,7 @@
 596;3;3;145;land;false;hills;1
 597;3;4;240;sea;true;ocean;0
 598;3;6;5;land;false;hills;2
-599;3;6;210;land;false;hills;1
+599;3;6;210;land;true;hills;1
 600;3;6;248;sea;true;ocean;0
 601;3;8;236;sea;false;ocean;0
 602;3;9;70;land;false;forest;2
@@ -13377,3 +13377,4 @@
 13376;175;211;233;land;true;urban;1
 13377;97;237;104;land;false;plains;1
 13378;207;65;119;land;true;plains;1
+13379;145;79;219;land;false;plains;1

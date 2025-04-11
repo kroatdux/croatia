@@ -626,7 +626,7 @@ characters={
 		portraits={
 			army ={
 				small="GFX_idea_CRO_slavko_stancer"
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Slavko_Stancer.dds"
+				large ="gfx/leaders/CRO/CRO_slavko_stancer.png"
 			}		
 		}		
 	}
@@ -736,7 +736,7 @@ characters={
 		name = "Matija Čanić"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Matija_Canic.dds"
+				large ="gfx/leaders/CRO/CRO_matija_canic.png"
 			}
 		}
 		corps_commander = {
@@ -752,7 +752,7 @@ characters={
 		name = "Franjo Šimić"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Franjo_Simic.dds"
+				large ="gfx/leaders/CRO/CRO_franjo_simic.png"
 			}
 		}
 		corps_commander = {
@@ -768,7 +768,7 @@ characters={
 		name = "Junuz Ajanović"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Junuz_Ajanovic.dds"
+				large ="gfx/leaders/CRO/CRO_junuz_ajanovic.png"
 			}
 		}
 		corps_commander = {
@@ -784,7 +784,7 @@ characters={
 		name = "Rafael Boban"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Rafael_Boban.dds"
+				large ="gfx/leaders/CRO/CRO_rafael_boban.png"
 				small=GFX_idea_CRO_rafael_boban
 			}
 		}
@@ -818,7 +818,7 @@ characters={
 		portraits={
 			army ={
 				small=GFX_idea_CRO_vilko_begic
-				large=gfx/leaders/kr_generic/Portrait_Europe_Generic_land_new_9.dds	#missing a large portrait? Okay
+				large="gfx/leaders/CRO/CRO_vilko_begic.png"
 			}
 		}
 		advisor={
@@ -842,7 +842,7 @@ characters={
 		name = "Andro Vrkljan"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_andro_vrkljan.dds"
+				large ="gfx/leaders/CRO/CRO_andro_vrkljan.dds"
 			}
 		}
 		navy_leader = {
@@ -873,7 +873,7 @@ characters={
 		name = "Đuro Jakčin"
 		portraits={
 			army ={
-				large ="gfx/leaders/CRO/r56_portrait_CRO_Duro_Jakcin.dds"
+				large ="gfx/leaders/CRO/portrait_CRO_duro_jakcin.dds"
 				small=GFX_idea_CRO_djuro_jakcin
 			}
 		}
@@ -1115,11 +1115,11 @@ characters={
 		name="CRO_dr_ante_pavelic"
 		portraits={
 			civilian={
-				large="gfx/leaders/CRO/CRO_Ante_Pavelic.png"
+				large="gfx/leaders/CRO/CRO_Ante_Pavelic_Dr.png"
 			}
 		}
 		country_leader={
-			ideology=authoritarian_democracy
+			ideology=conservatism
 		}
 	}
 	CRO_ivan_skerlecz = {
@@ -1167,8 +1167,8 @@ characters={
 		name="AUH_stjepan_sarkotic"
 		portraits={
 			army={
-				large="gfx/leaders/AUH/AUH_stjepan_sarkotic.png"
-				small="gfx/interface/ideas/AUH/idea_AUH_stjepan_sarkotic.png"
+				large="gfx/leaders/CRO/CRO_Stjepan_Sarkotic.png"
+				#small="gfx/interface/ideas/AUH/idea_AUH_stjepan_sarkotic.png"
 			}
 		}
 		advisor={
@@ -1857,7 +1857,7 @@ characters={
 		name = "Mirko Gregorić"
 		portraits = {		
 			army={
-				large="gfx/leaders/CRO/CRO_mirko_gregoric.png"
+				#large="gfx/leaders/CRO/CRO_mirko_gregoric.png"
 			}
 		}
 		corps_commander ={

@@ -24,6 +24,9 @@ state={
 		victory_points = { #Gospić
 			6611 1
 		}
+		victory_points = { #Crikvenica
+			591 1
+		}
 		buildings = {
 			infrastructure = 3
 			dockyard = 1

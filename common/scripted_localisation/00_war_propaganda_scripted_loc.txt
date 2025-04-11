@@ -37,8 +37,7 @@ defined_text = { # Country
 
 defined_text = {
 	name = GetCountryAppropriateFilmProduction
-	
-	###Allied films
+
 	text = {
 		trigger = {
 			tag = CRO
@@ -50,6 +49,8 @@ defined_text = {
 			10 = { localization_key = straza_na_drini }
 		}
 	}
+	
+	###Allied films
 	text = {
 		trigger = {
 			tag = AST

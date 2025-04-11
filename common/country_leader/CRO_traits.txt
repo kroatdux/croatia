@@ -15,11 +15,6 @@ leader_traits = {
 		random = no
 		political_power_gain = 0.15
 	}
-	poglavnik = {
-		random = no
-		weekly_casualties_war_support = 0.001
-		political_power_factor = 0.1
-	}
 	drug_comrade = {
 		random = no
 		stability_factor = 0.05
@@ -64,7 +59,7 @@ leader_traits = {
 	ustashe_teacher = {
 		random = no
 		political_power_factor = 0.05
-		manpower = 0.1
+		recruitable_population_factor = 0.3
 	}
 	CRO_reichsfuhrer = {
 		resistance_damage_to_garrison = -0.1

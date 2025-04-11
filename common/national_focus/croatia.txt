@@ -588,6 +588,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = {
 		id = CRO_core_croatian_territories
 		icon = GFX_focus_CRO_coa
@@ -2195,15 +2196,15 @@ focus_tree = {
 				target = YUG
 				expire = 180
 			}
-		}
-		if = {
-			limit = {
-				country_exists = SER
-			}
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = SER
-				expire = 180
+			if = {
+				limit = {
+					country_exists = SER
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SER
+					expire = 180
+				}
 			}
 		}
 	}
@@ -2965,6 +2966,55 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = CRO_sign_the_tripartite_pact
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		prerequisite = { focus = CRO_deal_with_italian_claims }
+		mutually_exclusive = { focus = CRO_tomislavs_absolute_reign }
+		relative_position_id = CRO_deal_with_italian_claims
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			GER = {
+				is_faction_leader = yes
+				has_government = fascism
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.1
+			add_opinion_modifier = {
+				target = GER
+				modifier = CRO_cooperation
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = CRO
+					modifier = CRO_cooperation
+				}
+			}
+			custom_effect_tooltip = available_military_high_command
+			show_unit_leaders_tooltip = CRO_ivan_prpic
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CRO_mladen_lorkovic
+		}
+	}
+	focus = {
 		id = CRO_papal_support
 		icon = GFX_focus_generic_pope
 		x = -8
@@ -3024,55 +3074,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-		}
-	}
-	focus = {
-		id = CRO_sign_the_tripartite_pact
-		icon = GFX_goal_tripartite_pact
-		x = 0
-		y = 1
-		prerequisite = { focus = CRO_deal_with_italian_claims }
-		mutually_exclusive = { focus = CRO_tomislavs_absolute_reign }
-		relative_position_id = CRO_deal_with_italian_claims
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 50
-		}
-
-		available = {
-			GER = {
-				is_faction_leader = yes
-				has_government = fascism
-				NOT = { has_war_with = ROOT }
-			}
-		}
-
-		bypass = {
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_war_support = 0.1
-			add_opinion_modifier = {
-				target = GER
-				modifier = CRO_cooperation
-			}
-			GER = {
-				add_opinion_modifier = {
-					target = CRO
-					modifier = CRO_cooperation
-				}
-			}
-			custom_effect_tooltip = available_military_high_command
-			show_unit_leaders_tooltip = CRO_ivan_prpic
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = CRO_mladen_lorkovic
 		}
 	}
 	focus = {
@@ -3263,7 +3264,7 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = { has_country_leader = CRO_vladko_macek ruling_only = yes }
+			NOT = { has_country_leader = { character = CRO_vladko_macek ruling_only = yes } }
 		}
 
 		bypass = {
@@ -3299,7 +3300,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = CRO_vladko_macek
+			has_country_leader = { character = CRO_vladko_macek	ruling_only = yes }
 		}
 
 		bypass = {
@@ -4016,7 +4017,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_cosmetic_tag = CRO_kingdom
-			promote_character = CRO_prince_aimone
+			promote_character = {
+				character = CRO_prince_aimone
+				ideology = fascism
+			}
 			set_party_name = {
 				ideology = fascism
 				long_name = CRO_savoy_party_long
